@@ -14,8 +14,10 @@ class Homepage extends Component {
         <NavBar />
         <TitleSection />
         <ServiceSection />
-        <AboutUsSection />
-        <OurTeamSection />
+        <section class="full-screen flex-box">
+          <AboutUsSection />
+          <OurTeamSection />
+        </section>
         <PhotosOfWorkSection />
         <ContactUsSection />
       </div>

@@ -3,3 +3,27 @@
   flex-direction: row;
   justify-content: space-around;
 }
+
+.full-screen {
+  height: 100vh;
+}
+
+.three-quarters-screen {
+  height: 75vh;
+}
+
+.half-screen {
+  height: 50vh;
+}
+
+.quarter-screen {
+  height: 25vh;
+}
+
+.half-screen-width {
+  width: 50vw;
+}
+
+.width-full {
+  width: 100%;
+}

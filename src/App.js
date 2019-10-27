@@ -6,6 +6,7 @@ import "./App.css";
 import { Router } from "@reach/router";
 import Homepage from "./components/Homepage/Homepage";
 import Footer from "./components/Footer";
+import "./styling/_global.scss";
 
 // library.add(fab, faCheckSquare, faCoffee);
 

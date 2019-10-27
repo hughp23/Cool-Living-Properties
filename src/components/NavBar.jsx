@@ -8,12 +8,12 @@ const NavBar = () => {
       id="navBar-container"
       className="navBar-container navBar-height flex-box"
     >
-      <h2>HOME</h2>
-      <h2>ABOUT US</h2>
-      <h2>OUR SERVICES</h2>
-      <h2>OUR TEAM</h2>
-      <h2>PHOTOS</h2>
-      <h2>CONTACT US</h2>
+      <h4>HOME</h4>
+      <h4>ABOUT US</h4>
+      <h4>OUR SERVICES</h4>
+      <h4>OUR TEAM</h4>
+      <h4>PHOTOS</h4>
+      <h4>CONTACT US</h4>
     </div>
   );
 };

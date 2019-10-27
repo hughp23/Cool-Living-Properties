@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "../../styling/_title-section.scss";
+import "../../styling/Homepage/_title-section.scss";
 
 class TitleSection extends Component {
   render() {
