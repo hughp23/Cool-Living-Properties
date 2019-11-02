@@ -5,7 +5,7 @@ class ContactUsSection extends Component {
   render() {
     return (
       <div id="contact-us-section" className="contact-us-section half-screen">
-        <h3>Contact Us</h3>
+        <h3>Do Not Hesitate to Contact Us</h3>
       </div>
     );
   }

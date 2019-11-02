@@ -1,6 +1,7 @@
 import React from "react";
 import "../styling/_nav-bar.scss";
 import "../styling/_global.scss";
+const coolLivingPropertiesLogo = require("../assets/cool-living-properties-logo.png");
 
 const NavBar = () => {
   return (
@@ -8,12 +9,15 @@ const NavBar = () => {
       id="navBar-container"
       className="navBar-container navBar-height flex-box"
     >
-      <h4>HOME</h4>
-      <h4>ABOUT US</h4>
-      <h4>OUR SERVICES</h4>
-      <h4>OUR TEAM</h4>
-      <h4>PHOTOS</h4>
-      <h4>CONTACT US</h4>
+      <h6>HOME</h6>
+      <h6>ABOUT US</h6>
+      <h6>OUR SERVICES</h6>
+      <div id="logo-container" className="logo-container">
+        <img alt="Cool Living Properties" src={coolLivingPropertiesLogo} />
+      </div>
+      <h6>OUR TEAM</h6>
+      <h6>PHOTOS</h6>
+      <h6>CONTACT US</h6>
     </div>
   );
 };

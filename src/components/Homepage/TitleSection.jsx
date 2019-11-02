@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../../styling/Homepage/_title-section.scss";
+const coolLivingPropertiesLogo = require("../../assets/cool-living-properties-logo.png");
 
 class TitleSection extends Component {
   render() {
     return (
-      <div className="full-screen">
-        <section>
+      <div id="title-section" className="title-section full-screen">
+        <section class="mission-statement-container">
           <h2>Our Mission Statement</h2>
           <p>
             Our mission is to offer reliable, professional and friendly property
@@ -17,22 +18,17 @@ class TitleSection extends Component {
             all of our clients.
           </p>
         </section>
-        <section>
+        <section class="core-values-container">
           <h2>Our Core Values</h2>
-          <section>
-            <h3>
-              <i class="far fa-check-circle"></i> Customer Service
-            </h3>
-            <h3>
-              <i class="far fa-check-circle"></i> Commitment to Quality
-            </h3>
-            <h3>
-              <i class="far fa-check-circle"></i> Affordability
-            </h3>
-            <h3>
-              <i class="far fa-check-circle"></i> Reliability
-            </h3>
+          <section class="core-values-list flex-box">
+            <h3>Customer Service</h3>
+            <h3>Commitment to Quality</h3>
+            <h3>Affordability</h3>
+            <h3>Reliability</h3>
           </section>
+          {/* <div id="logo-container" className="logo-container">
+            <img alt="Cool Living Properties" src={coolLivingPropertiesLogo} />
+          </div> */}
         </section>
       </div>
     );

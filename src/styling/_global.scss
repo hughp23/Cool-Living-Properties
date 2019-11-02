@@ -1,3 +1,5 @@
+@import "./branding.scss";
+
 .flex-box {
   display: flex;
   flex-direction: row;
@@ -26,4 +28,30 @@
 
 .width-full {
   width: 100%;
+}
+
+.lrg-button {
+  background-color: $ivory;
+  border-style: solid;
+  border-color: black;
+  border-radius: 0.5em;
+}
+
+text,
+p {
+  font-family: $primary-text-font;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $title-text-font;
+  margin: 0;
+}
+
+.pointer {
+  cursor: pointer;
 }
