@@ -16,7 +16,7 @@ function App() {
       <Router>
         <Homepage path="/" />
       </Router>
-      <Footer path="footer" />
+      <Footer path="/footer" />
     </div>
   );
 }

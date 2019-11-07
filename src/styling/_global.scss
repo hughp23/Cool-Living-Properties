@@ -6,6 +6,18 @@
   justify-content: space-around;
 }
 
+.flex-box-between {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.flex-box-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .full-screen {
   height: 100vh;
 }
@@ -54,4 +66,20 @@ h6 {
 
 .pointer {
   cursor: pointer;
+}
+
+.map-marker {
+  height: 215px;
+  width: 270px;
+  border: red 2px solid;
+  border-radius: 60%;
+  background-color: whitesmoke;
+  opacity: 0.3;
+}
+
+.map-marker-container {
+  position: absolute;
+  bottom: 50%;
+  right: 50%;
+  border: red 2px solid;
 }
