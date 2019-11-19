@@ -4,11 +4,14 @@ import "../../styling/Homepage/_contact-us-section.scss";
 import Marker from "./Marker";
 const phoneImg = require("../../assets/phone.png");
 const emailImg = require("../../assets/email.png");
+const facebookLogo = require("../../assets/social-media-logos/facebook.png");
+const instaLogo = require("../../assets/social-media-logos/instagram.png");
+const linkedinLogo = require("../../assets/social-media-logos/linkedin.png");
 
 class ContactUsSection extends Component {
   state = {
-    center: { lat: 39.460537, lng: 3.046869 },
-    zoom: 9
+    center: { lat: 39.56, lng: 3.046869 },
+    zoom: 10
   };
   render() {
     return (
@@ -16,18 +19,30 @@ class ContactUsSection extends Component {
         id="contact-us-section"
         className="contact-us-section half-screen flex-box"
       >
-        <section className="half-screen-width">
+        <section className="contact-us-container half-screen-width">
           <h3>Do Not Hesitate to Contact Us</h3>
-          <section className="flex-box-column">
+          <section className="contact-container flex-box-column">
             <contact className="flex-box-between">
               <img alt="phone" src={phoneImg} />
               <h4>+34 648 711 395</h4>
             </contact>
-            <contact className="flex-box-between">
-              <a href="mailto:coollivingproperties@gmail.com">
+            <a href="mailto:coollivingproperties@gmail.com">
+              <contact className="flex-box-between">
                 <img alt="email" src={emailImg} />
                 <h4>coollivingproperties@gmail.com</h4>
-              </a>
+              </contact>
+            </a>
+            <contact className="flex-box-between">
+              <img alt="facebook" src={facebookLogo} />
+              <h4>Facebook</h4>
+            </contact>
+            <contact className="flex-box-between">
+              <img alt="instagram" src={instaLogo} />
+              <h4>Instagram</h4>
+            </contact>
+            <contact className="flex-box-between">
+              <img alt="linkedin" src={linkedinLogo} />
+              <h4>Linkedin</h4>
             </contact>
           </section>
         </section>
@@ -55,8 +70,8 @@ class ContactUsSection extends Component {
             }
           >
             <Marker
-              lat={39.7}
-              lng={2.745341}
+              lat={39.84}
+              lng={2.53}
               text="My Marker"
               className="map-marker-container"
             />

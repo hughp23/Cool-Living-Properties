@@ -1,4 +1,8 @@
 @import "./branding.scss";
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:regular,bold,italic&subset=latin,latin-ext");
+
+//Import all other SCSS files
+@import "./Homepage/service-section.scss";
 
 .flex-box {
   display: flex;
@@ -52,6 +56,8 @@
 text,
 p {
   font-family: $primary-text-font;
+  padding-left: 5vw;
+  padding-right: 5vw;
 }
 
 h1,
@@ -69,8 +75,8 @@ h6 {
 }
 
 .map-marker {
-  height: 215px;
-  width: 270px;
+  height: 550px;
+  width: 700px;
   border: red 2px solid;
   border-radius: 60%;
   background-color: whitesmoke;

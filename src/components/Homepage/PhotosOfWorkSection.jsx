@@ -14,7 +14,7 @@ class PhotosOfWorkSection extends Component {
       >
         {/* <h3>Photo Gallery</h3> */}
         <Carousel className="photo-carousel">
-          <div>
+          <div className="carousel-img-container">
             <img alt="Cool Living Properties" src={coolLivingPropertiesLogo} />
             {/* <p className="legend">Cool Living Properties</p> */}
           </div>

@@ -20,6 +20,39 @@ class ServicesSection extends Component {
       >
         {/* <h2>Our Services</h2> */}
         <section id="services-grid" className="services-grid">
+          <section className="development">
+            <ReactCardFlip
+              isFlipped={this.state.open3}
+              flipDirection="horizontal"
+            >
+              <background
+                key="front"
+                onClick={() => this.openModal(3)}
+                className="pointer"
+              >
+                <imagecontainer>
+                  <img src={developmentImage} alt="development" />
+                </imagecontainer>
+                <h3>Development</h3>
+              </background>
+              <background
+                key="back"
+                onClick={() => this.closeModal(3)}
+                className="pointer"
+              >
+                <header>
+                  <h4>Development</h4>
+                </header>
+                <text>
+                  Our Development Team with over 10 years’ experience on the
+                  Island, sources sites and co- ordinates either new build,
+                  refurbishment or modernisation projects with our team of
+                  lawyers, architects and developers. This ranges from
+                  apartments through to country estates.
+                </text>
+              </background>
+            </ReactCardFlip>
+          </section>
           <section className="maintenance">
             <ReactCardFlip
               isFlipped={this.state.open1}
@@ -97,39 +130,6 @@ class ServicesSection extends Component {
                   month, inspect and check to see if there are any problems and
                   we will send you a monthly report to update you. Call us now
                   to find out more…
-                </text>
-              </background>
-            </ReactCardFlip>
-          </section>
-          <section className="development">
-            <ReactCardFlip
-              isFlipped={this.state.open3}
-              flipDirection="horizontal"
-            >
-              <background
-                key="front"
-                onClick={() => this.openModal(3)}
-                className="pointer"
-              >
-                <imagecontainer>
-                  <img src={developmentImage} alt="development" />
-                </imagecontainer>
-                <h3>Development</h3>
-              </background>
-              <background
-                key="back"
-                onClick={() => this.closeModal(3)}
-                className="pointer"
-              >
-                <header>
-                  <h4>Development</h4>
-                </header>
-                <text>
-                  Our Development Team with over 10 years’ experience on the
-                  Island, sources sites and co- ordinates either new build,
-                  refurbishment or modernisation projects with our team of
-                  lawyers, architects and developers. This ranges from
-                  apartments through to country estates.
                 </text>
               </background>
             </ReactCardFlip>
