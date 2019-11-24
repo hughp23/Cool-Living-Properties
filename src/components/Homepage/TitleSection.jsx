@@ -5,27 +5,24 @@ const coolLivingPropertiesLogo = require("../../assets/cool-living-properties-lo
 
 class TitleSection extends Component {
   render() {
+    const { section1, section2 } = this.props;
+    const section1Parsed = JSON.parse(section1);
+    const section2Parsed = JSON.parse(section2);
+    console.log(section1Parsed);
     return (
       <div id="title-section" className="title-section full-screen">
         <section className="text-container flex-box-column">
           <section class="mission-statement-container">
-            <h2>Our Mission Statement</h2>
-            <p>
-              Our mission is to offer reliable, professional and friendly
-              property maintenance, key-holding and development services whilst
-              also providing a high level of customer service. We want to enable
-              our clients to feel a “peace of mind” with their property /
-              properties. We strive to also create and build upon lasting
-              relationships with all of our clients.
-            </p>
+            <h2>{section1Parsed.title}</h2>
+            <p>{section1Parsed.text}</p>
           </section>
           <section class="core-values-container">
-            <h2>Our Core Values</h2>
+            <h2>{section2Parsed.title}</h2>
             <section class="core-values-list flex-box">
-              <h3>Customer Service</h3>
-              <h3>Commitment to Quality</h3>
-              <h3>Affordability</h3>
-              <h3>Reliability</h3>
+              <h3>{section2Parsed.text.text1}</h3>
+              <h3>{section2Parsed.text.text2}</h3>
+              <h3>{section2Parsed.text.text3}</h3>
+              <h3>{section2Parsed.text.text4}</h3>
             </section>
             {/* <div id="logo-container" className="logo-container">
             <img alt="Cool Living Properties" src={coolLivingPropertiesLogo} />
