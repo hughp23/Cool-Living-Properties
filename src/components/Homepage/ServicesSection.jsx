@@ -13,11 +13,12 @@ class ServicesSection extends Component {
     open3: false
   };
   render() {
+    const { development, maintenance, keyHolding } = this.props;
+    const developmentParsed = JSON.parse(development);
+    const maintenanceParsed = JSON.parse(maintenance);
+    const keyHoldingParsed = JSON.parse(keyHolding);
     return (
-      <div
-        id="service-section-container"
-        className="service-section-container full-screen"
-      >
+      <div id="service-section-container" className="service-section-container">
         {/* <h2>Our Services</h2> */}
         <section id="services-grid" className="services-grid">
           <section className="development">
@@ -33,7 +34,7 @@ class ServicesSection extends Component {
                 <imagecontainer>
                   <img src={developmentImage} alt="development" />
                 </imagecontainer>
-                <h3>Development</h3>
+                <h3>{developmentParsed.title}</h3>
               </background>
               <background
                 key="back"
@@ -41,15 +42,9 @@ class ServicesSection extends Component {
                 className="pointer"
               >
                 <header>
-                  <h4>Development</h4>
+                  <h4>{developmentParsed.title}</h4>
                 </header>
-                <text>
-                  Our Development Team with over 10 years’ experience on the
-                  Island, sources sites and co- ordinates either new build,
-                  refurbishment or modernisation projects with our team of
-                  lawyers, architects and developers. This ranges from
-                  apartments through to country estates.
-                </text>
+                <text>{developmentParsed.text}</text>
               </background>
             </ReactCardFlip>
           </section>
@@ -66,7 +61,7 @@ class ServicesSection extends Component {
                 <imagecontainer>
                   <img src={maintenanceImage} alt="maintenance" />
                 </imagecontainer>
-                <h3>Maintenance</h3>
+                <h3>{maintenanceParsed.title}</h3>
               </background>
               <background
                 key="back"
@@ -74,30 +69,17 @@ class ServicesSection extends Component {
                 className="pointer"
               >
                 <header>
-                  <h4>Maintenance</h4>
+                  <h4>{maintenanceParsed.title}</h4>
                 </header>
-                <text>
-                  Our Property maintenance division offers a range of services
-                  to keep your home in excellent condition. We can fix, repair
-                  and revitalise. We carry out the odd jobs as well as taking on
-                  the larger projects. No project is too small! Our “Mr fix it”
-                  team can tackle most issues ranging from…
-                </text>
+                <text>{maintenanceParsed.text1}</text>
                 <list>
                   <ul>
-                    <li>Gardening &amp; watering maintenance</li>
-                    <li>Fencing</li>
-                    <li>Pool cleaning &amp; maintenance</li>
-                    <li>Painting &amp; decorating</li>
-                    <li>Odd-jobs around your home</li>
-                    <li>Rubbish clearance</li>
-                    <li>Jet washing</li>
+                    {maintenanceParsed.list.map(item => {
+                      return <li>{item}</li>;
+                    })}
                   </ul>
                 </list>
-                <text>
-                  And more. We can also help to co-ordinate contractors required
-                  for the larger projects as well.
-                </text>
+                <text>{maintenanceParsed.text2}</text>
               </background>
             </ReactCardFlip>
           </section>
@@ -114,7 +96,7 @@ class ServicesSection extends Component {
                 <imagecontainer>
                   <img src={keyHoldingImage} alt="key-holding" />
                 </imagecontainer>
-                <h3>Key-holding</h3>
+                <h3>{keyHoldingParsed.title}</h3>
               </background>
               <background
                 key="back"
@@ -122,15 +104,9 @@ class ServicesSection extends Component {
                 className="pointer"
               >
                 <header>
-                  <h4>Key-holding</h4>
+                  <h4>{keyHoldingParsed.title}</h4>
                 </header>
-                <text>
-                  Our Key-holding service involves your “peace of mind” package
-                  whereby we will hold your keys, visit your property once a
-                  month, inspect and check to see if there are any problems and
-                  we will send you a monthly report to update you. Call us now
-                  to find out more…
-                </text>
+                <text>{keyHoldingParsed.text}</text>
               </background>
             </ReactCardFlip>
           </section>

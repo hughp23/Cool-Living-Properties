@@ -14,13 +14,13 @@ class ContactUsSection extends Component {
     zoom: 10
   };
   render() {
+    const { contactUs } = this.props;
+    const contactUsParsed = JSON.parse(contactUs);
+    const title = contactUsParsed.title;
     return (
-      <div
-        id="contact-us-section"
-        className="contact-us-section half-screen flex-box"
-      >
-        <section className="contact-us-container half-screen-width">
-          <h3>Do Not Hesitate to Contact Us</h3>
+      <div id="contact-us-section" className="contact-us-section half-screen">
+        <section className="contact-us-container">
+          <h3>{title}</h3>
           <section className="contact-container flex-box-column">
             <contact className="flex-box-between">
               <img alt="phone" src={phoneImg} />
@@ -46,7 +46,7 @@ class ContactUsSection extends Component {
             </contact>
           </section>
         </section>
-        <section style={{ height: "100%", width: "50vw" }}>
+        <section className="map-size" style={{ height: "100%", width: "100%" }}>
           {/* <GoogleMapReact
             bootstrapURLKeys={{
               key: "AIzaSyDGCuXe-BpifRSBcMOsWAn-aALXQWFfPXs"
