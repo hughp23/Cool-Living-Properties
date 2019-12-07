@@ -8,10 +8,7 @@ const sampleImage = require("../../assets/sample-image.png");
 class PhotosOfWorkSection extends Component {
   render() {
     return (
-      <div
-        id="photo-gallery-section"
-        className="photo-gallery-section three-quarters-screen"
-      >
+      <div id="photo-gallery-section" className="photo-gallery-section">
         {/* <h3>Photo Gallery</h3> */}
         <Carousel className="photo-carousel">
           <div className="carousel-img-container">

@@ -22,28 +22,45 @@ class ContactUsSection extends Component {
         <section className="contact-us-container">
           <h3>{title}</h3>
           <section className="contact-container flex-box-column">
-            <contact className="flex-box-between">
-              <img alt="phone" src={phoneImg} />
-              <h4>+34 648 711 395</h4>
-            </contact>
-            <a href="mailto:coollivingproperties@gmail.com">
+            <a>
+              <contact className="flex-box-between">
+                <img alt="phone" src={phoneImg} />
+                <h4>+34 648 711 395</h4>
+              </contact>
+            </a>
+            <a className="pointer" href="mailto:coollivingproperties@gmail.com">
               <contact className="flex-box-between">
                 <img alt="email" src={emailImg} />
                 <h4>coollivingproperties@gmail.com</h4>
               </contact>
             </a>
-            <contact className="flex-box-between">
-              <img alt="facebook" src={facebookLogo} />
-              <h4>Facebook</h4>
-            </contact>
-            <contact className="flex-box-between">
-              <img alt="instagram" src={instaLogo} />
-              <h4>Instagram</h4>
-            </contact>
-            <contact className="flex-box-between">
-              <img alt="linkedin" src={linkedinLogo} />
-              <h4>Linkedin</h4>
-            </contact>
+            <a
+              className="pointer"
+              href="https://www.facebook.com/Coollivingproperties/"
+            >
+              <contact className="flex-box-between">
+                <img alt="facebook" src={facebookLogo} />
+                <h4>@Coollivingproperties</h4>
+              </contact>
+            </a>
+            <a
+              className="pointer"
+              href="https://www.instagram.com/coollivingproperties/"
+            >
+              <contact className="flex-box-between">
+                <img alt="instagram" src={instaLogo} />
+                <h4>@coollivingproperties</h4>
+              </contact>
+            </a>
+            <a
+              className="pointer"
+              href="https://www.linkedin.com/in/cool-living-properties-93a512196/"
+            >
+              <contact className="flex-box-between">
+                <img alt="linkedin" src={linkedinLogo} />
+                <h4>Cool Living Properties</h4>
+              </contact>
+            </a>
           </section>
         </section>
         <section className="map-size" style={{ height: "100%", width: "100%" }}>

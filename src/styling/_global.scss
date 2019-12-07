@@ -22,6 +22,12 @@
   justify-content: space-between;
 }
 
+.flex-box-column-around {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
 .full-screen {
   height: 100vh;
 }
