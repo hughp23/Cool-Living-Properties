@@ -22,7 +22,16 @@ class ServicesSection extends Component {
         {/* <h2>Our Services</h2> */}
         <section id="services-grid" className="services-grid">
           <section className="development">
-            <ReactCardFlip
+            <background>
+              <header>
+                <h3>{developmentParsed.title}</h3>
+              </header>
+              <imagecontainer>
+                <img src={developmentImage} alt="development" />
+              </imagecontainer>
+              <text>{developmentParsed.text}</text>
+            </background>
+            {/* <ReactCardFlip
               isFlipped={this.state.open3}
               flipDirection="horizontal"
             >
@@ -46,10 +55,27 @@ class ServicesSection extends Component {
                 </header>
                 <text>{developmentParsed.text}</text>
               </background>
-            </ReactCardFlip>
+            </ReactCardFlip> */}
           </section>
           <section className="maintenance">
-            <ReactCardFlip
+            <background>
+              <header>
+                <h3>{maintenanceParsed.title}</h3>
+              </header>
+              <imagecontainer>
+                <img src={maintenanceImage} alt="development" />
+              </imagecontainer>
+              <text>{maintenanceParsed.text1}</text>
+              <list>
+                <ul>
+                  {maintenanceParsed.list.map(item => {
+                    return <li>{item}</li>;
+                  })}
+                </ul>
+              </list>
+              <text>{maintenanceParsed.text2}</text>
+            </background>
+            {/* <ReactCardFlip
               isFlipped={this.state.open1}
               flipDirection="horizontal"
             >
@@ -81,10 +107,19 @@ class ServicesSection extends Component {
                 </list>
                 <text>{maintenanceParsed.text2}</text>
               </background>
-            </ReactCardFlip>
+            </ReactCardFlip> */}
           </section>
           <section className="key-holding">
-            <ReactCardFlip
+            <background>
+              <header>
+                <h3>{keyHoldingParsed.title}</h3>
+              </header>
+              <imagecontainer>
+                <img src={keyHoldingImage} alt="development" />
+              </imagecontainer>
+              <text>{keyHoldingParsed.text}</text>
+            </background>
+            {/* <ReactCardFlip
               isFlipped={this.state.open2}
               flipDirection="horizontal"
             >
@@ -108,7 +143,7 @@ class ServicesSection extends Component {
                 </header>
                 <text>{keyHoldingParsed.text}</text>
               </background>
-            </ReactCardFlip>
+            </ReactCardFlip> */}
           </section>
         </section>
       </div>

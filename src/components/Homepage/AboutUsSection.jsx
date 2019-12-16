@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../../styling/Homepage/_about-us-section.scss";
+const aboutUsImg = require("../../assets/about-us-img.jpg");
 
 class AboutUsSection extends Component {
   render() {
@@ -15,7 +16,9 @@ class AboutUsSection extends Component {
             <p>{text}</p>
           </section>
         </section>
-        <section className="about-us-img-container"></section>
+        <section className="about-us-img-container">
+          <img src={aboutUsImg} alt="About Us" />
+        </section>
       </div>
     );
   }

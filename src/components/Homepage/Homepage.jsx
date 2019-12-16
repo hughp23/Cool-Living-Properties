@@ -140,6 +140,7 @@ class Homepage extends Component {
                   </h5>
                 </li>
                 <li>
+                  this.forceUpdate()
                   <h5 onClick={() => this.scrollIntoView("aboutUs")}>
                     {links.Nav4}
                   </h5>
@@ -163,6 +164,8 @@ class Homepage extends Component {
           <TitleSection
             section1={JSON.stringify(titleSection.section1)}
             section2={JSON.stringify(titleSection.section2)}
+            language={language}
+            changeLanguage={this.changeLanguage}
           />
         </section>
         <section id="ourServices">
@@ -186,108 +189,116 @@ class Homepage extends Component {
     );
   }
 
+  changeLanguage = language => {
+    console.log(language, "language");
+    this.setState({ language: language });
+    // this.forceUpdate();
+    console.log(this.state, "this.state");
+  };
+
   componentDidMount() {
     const { language } = this.state;
+    console.log(language, "language on mount");
 
-    // if (language !== "English") {
-    //NavBar
-    getHomePageContent(language, "NavBar", "Links").then(data => {
-      this.setState({
-        links: {
-          Nav1: data[0].Nav1,
-          Nav2: data[0].Nav2,
-          Nav3: data[0].Nav3,
-          Nav4: data[0].Nav4,
-          Nav5: data[0].Nav5,
-          Nav6: data[0].Nav6
-        }
+    if (language !== "English") {
+      //NavBar
+      getHomePageContent(language, "NavBar", "Links").then(data => {
+        this.setState({
+          links: {
+            Nav1: data[0].Nav1,
+            Nav2: data[0].Nav2,
+            Nav3: data[0].Nav3,
+            Nav4: data[0].Nav4,
+            Nav5: data[0].Nav5,
+            Nav6: data[0].Nav6
+          }
+        });
       });
-    });
 
-    //TitleSection
-    getHomePageContent(language, "TitleSection").then(data => {
-      this.setState({
-        titleSection: {
-          section1: {
-            title: data[0].Title,
-            text: data[0].Text
-          },
-          section2: {
-            title: data[1].Title,
-            text: {
-              text1: data[1].Text1,
-              text2: data[1].Text2,
-              text3: data[1].Text3,
-              text4: data[1].Text4
+      //TitleSection
+      getHomePageContent(language, "TitleSection").then(data => {
+        this.setState({
+          titleSection: {
+            section1: {
+              title: data[0].Title,
+              text: data[0].Text
+            },
+            section2: {
+              title: data[1].Title,
+              text: {
+                text1: data[1].Text1,
+                text2: data[1].Text2,
+                text3: data[1].Text3,
+                text4: data[1].Text4
+              }
             }
           }
-        }
+        });
       });
-    });
 
-    //OurServices
-    getHomePageContent(language, "OurServices").then(data => {
-      this.setState({
-        ourServices: {
-          development: {
+      //OurServices
+      getHomePageContent(language, "OurServices").then(data => {
+        this.setState({
+          ourServices: {
+            development: {
+              title: data[0].Title,
+              text: data[0].Text
+            },
+            maintenance: {
+              title: data[2].Title,
+              text1: data[2].Text1,
+              text2: data[2].Text2,
+              text3: data[2].Text3,
+              text4: data[2].Text4,
+              list: [
+                data[2].List1,
+                data[2].List2,
+                data[2].List3,
+                data[2].List4,
+                data[2].List5,
+                data[2].List6,
+                data[2].List7
+              ]
+            },
+            keyHolding: {
+              title: data[1].Title,
+              text: data[1].Text
+            }
+          }
+        });
+      });
+
+      //AboutUs
+      getHomePageContent(language, "AboutUs").then(data => {
+        this.setState({
+          aboutUs: {
             title: data[0].Title,
             text: data[0].Text
-          },
-          maintenance: {
-            title: data[2].Title,
-            text1: data[2].Text1,
-            text2: data[2].Text2,
-            text3: data[2].Text3,
-            text4: data[2].Text4,
-            list: [
-              data[2].List1,
-              data[2].List2,
-              data[2].List3,
-              data[2].List4,
-              data[2].List5,
-              data[2].List6,
-              data[2].List7
-            ]
-          },
-          keyHolding: {
-            title: data[1].Title,
-            text: data[1].Text
           }
-        }
+        });
       });
-    });
 
-    //AboutUs
-    getHomePageContent(language, "AboutUs").then(data => {
-      this.setState({
-        aboutUs: {
-          title: data[0].Title,
-          text: data[0].Text
-        }
+      //OurTeam
+      getHomePageContent(language, "OurTeam").then(data => {
+        this.setState({
+          ourTeam: {
+            title: data[0].Title,
+            text1: data[0].Text1,
+            text2: data[0].Text2,
+            text3: data[0].Text3,
+            text4: data[0].Text4,
+            text5: data[0].Text5
+          }
+        });
       });
-    });
 
-    //OurTeam
-    getHomePageContent(language, "OurTeam").then(data => {
-      this.setState({
-        ourTeam: {
-          title: data[0].Title,
-          text1: data[0].Text1,
-          text2: data[0].Text2,
-          text3: data[0].Text3,
-          text4: data[0].Text4,
-          text5: data[0].Text5
-        }
+      //ContactUs
+      getHomePageContent(language, "ContactUs").then(data => {
+        this.setState({
+          title: data[0].Title
+        });
       });
-    });
-
-    //ContactUs
-    getHomePageContent(language, "ContactUs").then(data => {
-      this.setState({
-        title: data[0].Title
-      });
-    });
-    // }
+    }
   }
 
   scrollIntoView = id => {
