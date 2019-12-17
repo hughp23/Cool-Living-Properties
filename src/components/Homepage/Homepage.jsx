@@ -17,6 +17,8 @@ import {
 } from "../../utils";
 import "firebase/firestore";
 const coolLivingPropertiesLogo = require("../../assets/cool-living-properties-logo.png");
+const spanishFlag = require("../../assets/spain-flag.png");
+const unitedKingdomFlag = require("../../assets/united-kingdom-flag.png");
 
 class Homepage extends Component {
   state = {
@@ -140,7 +142,6 @@ class Homepage extends Component {
                   </h5>
                 </li>
                 <li>
-                  this.forceUpdate()
                   <h5 onClick={() => this.scrollIntoView("aboutUs")}>
                     {links.Nav4}
                   </h5>
@@ -161,6 +162,25 @@ class Homepage extends Component {
         </div>
         {/* <NavBar /> */}
         <section id="home">
+          {/* <section class="flags-container">
+            <section
+              id="language-choices-container"
+              class="language-choices-container flex-box"
+            >
+              <div
+                className="flag"
+                onClick={() => this.changeLanguage("English")}
+              >
+                <img src={unitedKingdomFlag} alt="English" />
+              </div>
+              <div
+                className="flag"
+                onClick={() => this.changeLanguage("Spanish")}
+              >
+                <img src={spanishFlag} alt="Spanish" />
+              </div>
+            </section>
+          </section> */}
           <TitleSection
             section1={JSON.stringify(titleSection.section1)}
             section2={JSON.stringify(titleSection.section2)}
@@ -191,115 +211,101 @@ class Homepage extends Component {
 
   changeLanguage = language => {
     console.log(language, "language");
-    this.setState({ language: language });
+    // this.setState({ language: language });
+    localStorage.setItem("language", language);
+    window.location.replace("/");
     // this.forceUpdate();
-    console.log(this.state, "this.state");
+    // console.log(this.state, "this.state");
   };
 
   componentDidMount() {
-    const { language } = this.state;
+    let { language } = this.state;
     console.log(language, "language on mount");
 
+    language =
+      localStorage.getItem("language") === null
+        ? "English"
+        : localStorage.getItem("language");
+    console.log(language, "local storage language");
+
     if (language !== "English") {
-      //NavBar
-      getHomePageContent(language, "NavBar", "Links").then(data => {
+      getHomePageContent(language).then(data => {
+        console.log(data, "data");
+
         this.setState({
           links: {
-            Nav1: data[0].Nav1,
-            Nav2: data[0].Nav2,
-            Nav3: data[0].Nav3,
-            Nav4: data[0].Nav4,
-            Nav5: data[0].Nav5,
-            Nav6: data[0].Nav6
-          }
-        });
-      });
-
-      //TitleSection
-      getHomePageContent(language, "TitleSection").then(data => {
-        this.setState({
+            Nav1: data.navBar[0].Nav1,
+            Nav2: data.navBar[0].Nav2,
+            Nav3: data.navBar[0].Nav3,
+            Nav4: data.navBar[0].Nav4,
+            Nav5: data.navBar[0].Nav5,
+            Nav6: data.navBar[0].Nav6
+          },
           titleSection: {
             section1: {
-              title: data[0].Title,
-              text: data[0].Text
+              title: data.titleSection[0].Title,
+              text: data.titleSection[0].Text
             },
             section2: {
-              title: data[1].Title,
+              title: data.titleSection[1].Title,
               text: {
-                text1: data[1].Text1,
-                text2: data[1].Text2,
-                text3: data[1].Text3,
-                text4: data[1].Text4
+                text1: data.titleSection[1].Text1,
+                text2: data.titleSection[1].Text2,
+                text3: data.titleSection[1].Text3,
+                text4: data.titleSection[1].Text4
               }
             }
-          }
-        });
-      });
-
-      //OurServices
-      getHomePageContent(language, "OurServices").then(data => {
-        this.setState({
+          },
           ourServices: {
             development: {
-              title: data[0].Title,
-              text: data[0].Text
+              title: data.ourServices[0].Title,
+              text: data.ourServices[0].Text
             },
             maintenance: {
-              title: data[2].Title,
-              text1: data[2].Text1,
-              text2: data[2].Text2,
-              text3: data[2].Text3,
-              text4: data[2].Text4,
+              title: data.ourServices[2].Title,
+              text1: data.ourServices[2].Text1,
+              text2: data.ourServices[2].Text1,
               list: [
-                data[2].List1,
-                data[2].List2,
-                data[2].List3,
-                data[2].List4,
-                data[2].List5,
-                data[2].List6,
-                data[2].List7
+                data.ourServices[2].List1,
+                data.ourServices[2].List2,
+                data.ourServices[2].List3,
+                data.ourServices[2].List4,
+                data.ourServices[2].List5,
+                data.ourServices[2].List6,
+                data.ourServices[2].List7
               ]
             },
             keyHolding: {
-              title: data[1].Title,
-              text: data[1].Text
+              title: data.ourServices[1].Title,
+              text: data.ourServices[1].Text
             }
-          }
-        });
-      });
-
-      //AboutUs
-      getHomePageContent(language, "AboutUs").then(data => {
-        this.setState({
+          },
           aboutUs: {
-            title: data[0].Title,
-            text: data[0].Text
-          }
-        });
-      });
-
-      //OurTeam
-      getHomePageContent(language, "OurTeam").then(data => {
-        this.setState({
+            title: data.aboutUs[0].Title,
+            text: data.aboutUs[0].Text
+          },
           ourTeam: {
-            title: data[0].Title,
-            text1: data[0].Text1,
-            text2: data[0].Text2,
-            text3: data[0].Text3,
-            text4: data[0].Text4,
-            text5: data[0].Text5
+            title: data.ourTeam[0].Title,
+            text: [
+              data.ourTeam[0].Text1,
+              data.ourTeam[0].Text2,
+              data.ourTeam[0].Text3,
+              data.ourTeam[0].Text4,
+              data.ourTeam[0].Text5
+            ]
+          },
+          contactUs: {
+            title: data.contactUs[0].Title
           }
-        });
-      });
-
-      //ContactUs
-      getHomePageContent(language, "ContactUs").then(data => {
-        this.setState({
-          title: data[0].Title
         });
       });
     }
   }
+
+  // componentDidUpdate() {
+  //   const { language } = this.state;
+  //   console.log(language, "language on mount");
+  // }
 
   scrollIntoView = id => {
     document.getElementById(id).scrollIntoView();

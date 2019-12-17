@@ -95,3 +95,22 @@ h6 {
   right: 50%;
   border: red 2px solid;
 }
+
+.flags-container {
+  width: 100%;
+  padding-top: 4vh;
+  position: absolute;
+  z-index: 200;
+
+  .language-choices-container {
+    min-width: 15vw;
+    float: right;
+
+    .flag {
+      cursor: pointer;
+      img {
+        max-height: 4vh;
+      }
+    }
+  }
+}

@@ -6,7 +6,7 @@ class OurTeamSection extends Component {
   render() {
     const { ourTeam } = this.props;
     const ourTeamParsed = JSON.parse(ourTeam);
-    console.log(ourTeamParsed, "ourTeamParsed");
+    // console.log(ourTeamParsed, "ourTeamParsed");
     return (
       <div id="our-team-section" className="our-team-section width-full">
         <section className="our-team-img-container">
