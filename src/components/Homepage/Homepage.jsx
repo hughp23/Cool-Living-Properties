@@ -110,19 +110,33 @@ class Homepage extends Component {
           id="navBar-container"
           className="navBar-container navBar-height flex-box"
         >
-          <h6 onClick={() => this.scrollIntoView("home")}>{links.Nav1}</h6>
-          <h6 onClick={() => this.scrollIntoView("aboutUs")}>{links.Nav2}</h6>
-          <h6 onClick={() => this.scrollIntoView("ourServices")}>
-            {links.Nav3}
-          </h6>
+          <div className="link-container flex-box-column">
+            <h4 onClick={() => this.scrollIntoView("home")}>{links.Nav1}</h4>
+          </div>
+          <div className="link-container flex-box-column">
+            <h4 onClick={() => this.scrollIntoView("aboutUs")}>{links.Nav2}</h4>
+          </div>
+          <div className="link-container flex-box-column">
+            <h4 onClick={() => this.scrollIntoView("ourServices")}>
+              {links.Nav3}
+            </h4>
+          </div>
           <div id="logo-container" className="logo-container">
             <img alt="Cool Living Properties" src={coolLivingPropertiesLogo} />
           </div>
-          <h6 onClick={() => this.scrollIntoView("aboutUs")}>{links.Nav4}</h6>
-          <h6 onClick={() => this.scrollIntoView("photosOfOurWork")}>
-            {links.Nav5}
-          </h6>
-          <h6 onClick={() => this.scrollIntoView("contactUs")}>{links.Nav6}</h6>
+          <div className="link-container flex-box-column">
+            <h4 onClick={() => this.scrollIntoView("aboutUs")}>{links.Nav4}</h4>
+          </div>
+          <div className="link-container flex-box-column">
+            <h4 onClick={() => this.scrollIntoView("photosOfOurWork")}>
+              {links.Nav5}
+            </h4>
+          </div>
+          <div className="link-container flex-box-column">
+            <h4 onClick={() => this.scrollIntoView("contactUs")}>
+              {links.Nav6}
+            </h4>
+          </div>
           <div class="slideInMenu">
             <Menu right>
               <ul>

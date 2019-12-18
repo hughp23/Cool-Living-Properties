@@ -64,6 +64,7 @@ p {
   font-family: $primary-text-font;
   padding-left: 2.5vw;
   padding-right: 2.55vw;
+  line-break: 2.5vh;
 }
 
 h1,
@@ -74,6 +75,10 @@ h5,
 h6 {
   font-family: $title-text-font;
   margin: 0;
+}
+
+h3 {
+  font-size: 1.75em;
 }
 
 .pointer {

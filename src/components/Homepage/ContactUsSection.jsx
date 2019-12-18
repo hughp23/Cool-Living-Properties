@@ -7,6 +7,7 @@ const emailImg = require("../../assets/email.png");
 const facebookLogo = require("../../assets/social-media-logos/facebook.png");
 const instaLogo = require("../../assets/social-media-logos/instagram.png");
 const linkedinLogo = require("../../assets/social-media-logos/linkedin.png");
+const openDoor = require("../../assets/open-door.png");
 
 class ContactUsSection extends Component {
   state = {
@@ -59,6 +60,12 @@ class ContactUsSection extends Component {
               <contact className="flex-box-between">
                 <img alt="linkedin" src={linkedinLogo} />
                 <h4>Cool Living Properties</h4>
+              </contact>
+            </a>
+            <a>
+              <contact className="flex-box-between">
+                <img alt="Opening Times" src={openDoor} />
+                <h4>Mon-Fri 09:00-17:00</h4>
               </contact>
             </a>
           </section>
