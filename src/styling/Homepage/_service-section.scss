@@ -1,0 +1,134 @@
+@import "../branding.scss";
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:regular,bold,italic&subset=latin,latin-ext");
+
+.service-section-container {
+  background-color: $light-blue;
+  .services-grid {
+    display: flex;
+    // grid-template: 1fr / 1fr 1fr 1fr;
+    // grid-template-areas: "development maintenance key-holding";
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 100vh;
+
+    .maintenance {
+      // border: blue 2px solid;
+      // grid-area: maintenance;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      padding: 5vh 5vw 5vh 5vw;
+
+      background {
+        background-color: $medium-grey;
+        min-height: 75vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        border-radius: 1.2em;
+        padding-top: 2vh;
+        padding-bottom: 2vh;
+        // padding: 5vh 5vw 5vh 5vw;
+
+        h3 {
+          font-family: $secondary-title-font;
+          font-size: 2.5em;
+        }
+
+        imagecontainer {
+          img {
+            height: 10vh;
+          }
+        }
+      }
+    }
+
+    .key-holding {
+      // border: red 2px solid;
+      // grid-area: key-holding;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      padding: 5vh 5vw 5vh 5vw;
+
+      background {
+        background-color: $medium-grey;
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        border-radius: 1.2em;
+        padding-top: 2vh;
+        padding-bottom: 2vh;
+        // padding: 5vh 5vw 5vh 5vw;
+
+        h3 {
+          font-family: $secondary-title-font;
+          font-size: 2.5em;
+        }
+
+        imagecontainer {
+          img {
+            height: 10vh;
+          }
+        }
+      }
+    }
+
+    .development {
+      // border: green 2px solid;
+      // grid-area: development;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      padding: 5vh 5vw 5vh 5vw;
+
+      background {
+        background-color: $medium-grey;
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        border-radius: 1.2em;
+        padding-top: 2vh;
+        padding-bottom: 2vh;
+        // padding: 5vh 5vw 5vh 5vw;
+
+        h3 {
+          font-family: $secondary-title-font;
+          font-size: 2.5em;
+        }
+
+        imagecontainer {
+          img {
+            height: 10vh;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .service-section-container {
+    .services-grid {
+      flex-direction: column;
+
+      .maintenance {
+        width: auto;
+      }
+
+      .development {
+        width: auto;
+      }
+
+      .key-holding {
+        width: auto;
+      }
+    }
+  }
+}

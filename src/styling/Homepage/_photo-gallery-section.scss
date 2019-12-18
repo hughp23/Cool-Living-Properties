@@ -1,0 +1,26 @@
+@import "../branding.scss";
+
+.photo-gallery-section {
+  // border: purple 2px solid;
+  background-color: $black;
+  min-height: 75vh;
+
+  .photo-carousel {
+    // border: orange 2px solid;
+    min-height: 60vh;
+
+    .carousel-img-container {
+      max-height: 60vh;
+    }
+
+    .carousel {
+      .slide {
+        img {
+          width: auto !important;
+          max-height: 55vh;
+          max-width: 100vw;
+        }
+      }
+    }
+  }
+}

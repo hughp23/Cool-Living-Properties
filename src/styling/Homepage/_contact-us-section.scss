@@ -1,0 +1,80 @@
+@import "../branding.scss";
+
+.contact-us-section {
+  // border: green 2px solid;
+  background-color: $ivory;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  // width: 50vw;
+  // min-height: 50vh;
+
+  .contact-us-container {
+    h3 {
+      padding-top: 3.5vh;
+      font-size: 2em;
+    }
+    .contact-container {
+      padding-left: 5vw;
+      padding-right: 5vw;
+      height: 70%;
+      padding-top: 5vh;
+      padding-bottom: 5vh;
+      a {
+        text-decoration: none;
+
+        contact {
+          width: 20vw;
+
+          img {
+            height: 5vh;
+          }
+
+          h4 {
+            position: relative;
+            top: 2.5vh;
+            transform: translateY(-50%);
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            height: 2.5vh;
+            text-decoration: none;
+            color: $dark-grey;
+          }
+        }
+      }
+    }
+  }
+
+  .map-size {
+    height: "100%";
+    width: "100%";
+
+    // GoogleMapReact {
+    //   max-height: 50vh;
+    // }
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .contact-us-section {
+    flex-direction: column;
+    height: 85vh;
+
+    .contact-us-container {
+      .contact-container {
+        a {
+          contact {
+            width: 85vw;
+            margin-top: 1.5vh;
+            margin-bottom: 1.5vh;
+          }
+        }
+      }
+    }
+
+    .map-size {
+      height: 50vh;
+      // width: "100%";
+    }
+  }
+}

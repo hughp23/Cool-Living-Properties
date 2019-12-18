@@ -1,0 +1,45 @@
+@import "./branding.scss";
+
+.footer {
+  // border: black 2px solid;
+  background-color: $light-blue;
+  display: grid;
+  grid-template: 1fr 1fr 1fr / 3fr;
+  grid-template-areas:
+    "logo"
+    "navBar"
+    "mediaLinks";
+
+  .logo-container {
+    grid-area: logo;
+    img {
+      height: 7.5vh;
+    }
+  }
+
+  .footer-nav-container {
+    // position: relative;
+    // left: 37.5%;
+    width: 25vw;
+    margin: auto;
+    grid-area: navBar;
+    p {
+      font-size: 0.75em;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .social-media-links-container {
+    width: 10vw;
+    margin: auto;
+    grid-area: mediaLinks;
+    .social-logo-container {
+      a {
+        img {
+          height: 3vh;
+        }
+      }
+    }
+  }
+}

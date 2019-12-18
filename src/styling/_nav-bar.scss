@@ -1,0 +1,202 @@
+@import "./branding.scss";
+
+.navBar-height {
+  min-height: 10vh;
+}
+
+.navBar-container {
+  background-color: $light-blue;
+  .link-container {
+    h4 {
+      position: relative;
+      top: 50%;
+      color: $dark-grey;
+      height: 25%;
+      cursor: pointer;
+    }
+  }
+
+  .logo-container {
+    img {
+      height: 15vh;
+    }
+  }
+
+  .slideInMenu {
+    display: none;
+  }
+
+  .network-list-container {
+    width: 99vw;
+    height: 10vh;
+    margin-top: -2vh;
+  }
+
+  .network-list-container ul li a img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .network-list-container ul li a img:hover {
+    transform: scale(1.1, 1.1);
+    transition: 0.3s ease-in-out;
+  }
+
+  .network-list-container ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: none;
+    height: 10vh;
+  }
+
+  .network-list-container ul li {
+    float: left;
+  }
+
+  .network-list-container ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 1.5em 1em;
+    text-decoration: none;
+    height: 4vh;
+    width: 4vw;
+    text-align: center;
+    margin-top: 2vh;
+  }
+
+  /* Position and sizing of burger button */
+  .bm-burger-button {
+    width: 36px;
+    height: 2.5vh;
+    right: 5px;
+    top: 3.5vh;
+    position: absolute;
+  }
+
+  /* Color/shape of burger icon bars */
+  .bm-burger-bars {
+    background: #000000;
+  }
+
+  /* Color/shape of burger icon bars on hover*/
+  .bm-burger-bars-hover {
+    transform: scale(1.1, 1.1);
+    transition: 0.3s ease-in-out;
+  }
+
+  /* Position and sizing of clickable cross button */
+  .bm-cross-button {
+    height: 24px;
+    width: 24px;
+  }
+
+  /* Color/shape of close button cross */
+  .bm-cross {
+    background: #000000;
+  }
+
+  /*
+    Sidebar wrapper styles
+    Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+    */
+  .bm-menu-wrap {
+    position: fixed;
+    height: 100%;
+  }
+
+  /* General sidebar styles */
+  .bm-menu {
+    background: #111111;
+    /* padding: 2.5em 1.5em 0; */
+    font-size: 1.3em;
+    overflow: hidden;
+  }
+
+  /* Morph shape necessary with bubble or elastic */
+  .bm-morph-shape {
+    fill: #373a47;
+  }
+
+  /* Wrapper for item list */
+  .bm-item-list ul {
+    color: #b8b7ad;
+    padding: 0 !important;
+    list-style-type: none !important;
+    border: none;
+    overflow: hidden;
+  }
+
+  .bm-item-list li {
+    color: #b8b7ad !important;
+    padding: 1.4em;
+    list-style-type: none !important;
+    text-align: center;
+  }
+
+  .bm-item-list li a {
+    color: #b8b7ad;
+    text-decoration: none;
+    padding-left: 3.4em;
+    padding-right: 5.4em;
+    padding-bottom: 1.4em;
+    padding-top: 1.4em;
+    text-align: center;
+    width: 100px;
+    margin: none;
+  }
+
+  .bm-item-list li:hover {
+    color: #111111;
+    background-color: #b8b7ad;
+    transition: 0.5s ease-in-out;
+  }
+
+  .bm-item-list li a {
+    color: #b8b7ad;
+    text-decoration: none;
+  }
+
+  .bm-item-list li a:hover {
+    color: #111111;
+    transition: 0.3s ease-in-out;
+  }
+
+  /* Individual item */
+  .bm-item {
+    display: inline-block;
+    text-decoration: none;
+    border: none !important;
+  }
+
+  /* Styling of overlay */
+  .bm-overlay {
+    background: rgba(0, 0, 0, 0.3);
+    // background: none !important;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .navBar-container {
+    background-color: $light-blue;
+    position: fixed;
+    z-index: 200;
+    width: 100%;
+    h4 {
+      font-size: 1em;
+      display: none;
+    }
+
+    .logo-container {
+      img {
+        height: 10vh;
+      }
+    }
+
+    .slideInMenu {
+      display: block;
+    }
+  }
+}

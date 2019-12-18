@@ -1,0 +1,50 @@
+@import "../branding.scss";
+
+.our-team-section {
+  // border: blue 2px solid;
+  width: 100%;
+  background-color: $brown;
+
+  .text {
+    display: grid;
+    grid-template: 10% 90% / 100%;
+    grid-template-areas:
+      "header"
+      "text";
+    min-height: 50vh;
+
+    h3 {
+      grid-area: header;
+      padding-top: 2.5vh;
+      padding-bottom: 2.5vh;
+    }
+
+    .text-container {
+      grid-area: text;
+
+      p {
+        line-height: 3vh;
+      }
+    }
+  }
+
+  .our-team-img-container {
+    // border: red 2px solid;
+    min-height: 50vh;
+
+    img {
+      height: 50vh;
+      width: 70%;
+    }
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .our-team-section {
+    .our-team-img-container {
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,97 @@
+.title-section {
+  background-image: url("../../assets/renovations-large.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  opacity: 0.85;
+
+  .flags-container {
+    width: 100%;
+    padding-top: 4vh;
+
+    .language-choices-container {
+      min-width: 15vw;
+      float: right;
+
+      .flag {
+        cursor: pointer;
+        img {
+          max-height: 4vh;
+        }
+      }
+    }
+  }
+
+  .text-container {
+    opacity: 1;
+    height: 80%;
+    //padding-top: 5vh;
+    width: 100%;
+  }
+
+  .mission-statement-container {
+    padding: 5vh 10vw 5vh 10vw;
+
+    h2 {
+      margin: 4vh;
+    }
+
+    p {
+      font-size: 2em;
+    }
+  }
+
+  .core-values-container {
+    padding: 5vh 10vw 5vh 10vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    h2 {
+      margin: 4vh;
+    }
+    .core-values-list {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      .checkmark-and-text {
+        .checkmark {
+          height: 5vh;
+        }
+
+        h3 {
+          position: relative;
+          top: 50%;
+          transform: translateY(-50%);
+          -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+          height: 2.5vh;
+          margin-left: 1vw;
+        }
+      }
+    }
+  }
+
+  .logo-container {
+    img {
+      height: 20vh;
+      position: relative;
+      top: 50%;
+    }
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .core-values-container {
+    position: relative;
+    top: 10vh;
+    .core-values-list {
+      flex-direction: column !important;
+      height: 40vh;
+    }
+  }
+
+  .flags-container {
+    top: 10vh;
+  }
+}

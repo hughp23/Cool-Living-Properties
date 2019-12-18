@@ -1,0 +1,55 @@
+@import "../branding.scss";
+
+.aboutUs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+.about-us-section {
+  // border: red 2px solid;
+  background-color: $ivory;
+  width: 100%;
+
+  .text {
+    display: grid;
+    grid-template: 10% 90% / 100%;
+    grid-template-areas:
+      "header"
+      "text";
+    min-height: 50vh;
+
+    h3 {
+      grid-area: header;
+      padding-top: 2.5vh;
+      padding-bottom: 2.5vh;
+      position: relative;
+      top: 7vh;
+    }
+
+    .text-container {
+      grid-area: text;
+
+      p {
+        line-height: 3vh;
+      }
+    }
+  }
+
+  .about-us-img-container {
+    //border: red 2px solid;
+    min-height: 50vh;
+
+    img {
+      height: 50vh;
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .aboutUs {
+    flex-direction: column;
+  }
+}
