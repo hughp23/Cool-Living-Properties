@@ -60,10 +60,10 @@ class Homepage extends Component {
         text2:
           "And more. We can also help to co-ordinate contractors required for the larger projects as well.",
         list: [
-          "Gardening &amp; watering maintenance",
+          "Gardening & watering maintenance",
           "Fencing",
-          "Pool cleaning &amp; maintenance",
-          "Painting &amp; decorating",
+          "Pool cleaning & maintenance",
+          "Painting & decorating",
           "Odd-jobs around your home",
           "Rubbish clearance",
           "Jet washing"
@@ -104,6 +104,7 @@ class Homepage extends Component {
       ourTeam,
       contactUs
     } = this.state;
+    const coreValues = titleSection.section2;
     return (
       <div>
         <div
@@ -210,7 +211,10 @@ class Homepage extends Component {
           />
         </section>
         <section id="aboutUs" path="/aboutUs" class="aboutUs">
-          <AboutUsSection aboutUs={JSON.stringify(aboutUs)} />
+          <AboutUsSection
+            aboutUs={JSON.stringify(aboutUs)}
+            coreValues={JSON.stringify(coreValues)}
+          />
           <OurTeamSection ourTeam={JSON.stringify(ourTeam)} />
         </section>
         <section id="photosOfOurWork">

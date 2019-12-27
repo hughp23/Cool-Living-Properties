@@ -22,10 +22,9 @@
 
     h3 {
       grid-area: header;
-      padding-top: 2.5vh;
+      padding-top: 8.5vh;
       padding-bottom: 2.5vh;
-      position: relative;
-      top: 7vh;
+      padding-left: 2.5vw;
     }
 
     .text-container {
@@ -33,6 +32,40 @@
 
       p {
         line-height: 3vh;
+      }
+    }
+
+    .core-values-container {
+      // padding: 5vh 10vw 5vh 10vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 100%;
+
+      h2 {
+        margin: 4vh;
+      }
+      .core-values-list {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        .checkmark-and-text {
+          .checkmark {
+            height: 2.5vh;
+          }
+
+          h3 {
+            position: relative;
+            top: -10%;
+            transform: translateY(-50%);
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            height: 2.5vh;
+            margin-left: 1vw;
+            font-size: 0.75em;
+            padding-left: 0;
+          }
+        }
       }
     }
   }

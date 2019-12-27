@@ -3,11 +3,11 @@
 .our-team-section {
   // border: blue 2px solid;
   width: 100%;
-  background-color: $brown;
+  background-color: $light-grey;
 
   .text {
     display: grid;
-    grid-template: 10% 90% / 100%;
+    grid-template: 5% 95% / 100%;
     grid-template-areas:
       "header"
       "text";
@@ -15,15 +15,17 @@
 
     h3 {
       grid-area: header;
-      padding-top: 2.5vh;
+      padding-top: 8.5vh;
       padding-bottom: 2.5vh;
+      padding-left: 2.5vw;
     }
 
     .text-container {
       grid-area: text;
 
       p {
-        line-height: 3vh;
+        // line-height: 3vh;
+        // text-align: center;
       }
     }
   }

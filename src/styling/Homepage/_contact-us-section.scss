@@ -2,7 +2,7 @@
 
 .contact-us-section {
   // border: green 2px solid;
-  background-color: $ivory;
+  background-color: $medium-grey;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -13,6 +13,7 @@
     h3 {
       padding-top: 3.5vh;
       font-size: 2em;
+      padding-left: 2.5vw;
     }
     .contact-container {
       padding-left: 5vw;
@@ -27,7 +28,7 @@
           width: 20vw;
 
           img {
-            height: 5vh;
+            height: 3.5vh;
           }
 
           h4 {

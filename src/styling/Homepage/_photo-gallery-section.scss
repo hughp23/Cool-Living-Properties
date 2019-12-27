@@ -2,15 +2,19 @@
 
 .photo-gallery-section {
   // border: purple 2px solid;
-  background-color: $black;
+  background-color: $cream;
   min-height: 75vh;
+  padding-top: 5vh;
 
   .photo-carousel {
     // border: orange 2px solid;
     min-height: 60vh;
-
+    .slide {
+      background-color: $cream;
+    }
     .carousel-img-container {
       max-height: 60vh;
+      background-color: $cream;
     }
 
     .carousel {

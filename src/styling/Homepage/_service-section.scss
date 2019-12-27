@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:regular,bold,italic&subset=latin,latin-ext");
 
 .service-section-container {
-  background-color: $light-blue;
+  background-color: $cream;
   .services-grid {
     display: flex;
     // grid-template: 1fr / 1fr 1fr 1fr;
@@ -22,7 +22,12 @@
       padding: 5vh 5vw 5vh 5vw;
 
       background {
-        background-color: $medium-grey;
+        // background-color: $medium-grey;
+        background-image: url("../../assets/concrete-background.JPG");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        opacity: 0.85;
         min-height: 75vh;
         display: flex;
         flex-direction: column;
@@ -55,7 +60,12 @@
       padding: 5vh 5vw 5vh 5vw;
 
       background {
-        background-color: $medium-grey;
+        // background-color: $medium-grey;
+        background-image: url("../../assets/concrete-background.JPG");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        opacity: 0.85;
         height: 50vh;
         display: flex;
         flex-direction: column;
@@ -88,7 +98,12 @@
       padding: 5vh 5vw 5vh 5vw;
 
       background {
-        background-color: $medium-grey;
+        // background-color: $medium-grey;
+        background-image: url("../../assets/concrete-background.JPG");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        opacity: 0.85;
         height: 50vh;
         display: flex;
         flex-direction: column;
