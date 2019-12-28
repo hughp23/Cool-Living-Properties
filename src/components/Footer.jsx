@@ -16,17 +16,38 @@ class Footer extends Component {
           id="footer-nav-container"
           className="footer-nav-container flex-box"
         >
-          <p onClick={() => this.scrollIntoView("home")}>Home</p>
+          <p className="pointer" onClick={() => this.scrollIntoView("home")}>
+            Home
+          </p>
           <p> | </p>
-          <p onClick={() => this.scrollIntoView("aboutUs")}>About Us</p>
+          <p className="pointer" onClick={() => this.scrollIntoView("aboutUs")}>
+            About Us
+          </p>
           <p> | </p>
-          <p onClick={() => this.scrollIntoView("ourServices")}>Our Services</p>
+          <p
+            className="pointer"
+            onClick={() => this.scrollIntoView("ourServices")}
+          >
+            Our Services
+          </p>
           <p> | </p>
-          <p onClick={() => this.scrollIntoView("aboutUs")}>Our Team</p>
+          <p className="pointer" onClick={() => this.scrollIntoView("aboutUs")}>
+            Our Team
+          </p>
           <p> | </p>
-          <p onClick={() => this.scrollIntoView("photosOfOurWork")}>Photos</p>
+          <p
+            className="pointer"
+            onClick={() => this.scrollIntoView("photosOfOurWork")}
+          >
+            Photos
+          </p>
           <p> | </p>
-          <p onClick={() => this.scrollIntoView("contactUs")}>Contact Us</p>
+          <p
+            className="pointer"
+            onClick={() => this.scrollIntoView("contactUs")}
+          >
+            Contact Us
+          </p>
         </section>
         <section
           id="social-media-links-container"
