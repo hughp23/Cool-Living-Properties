@@ -16,9 +16,9 @@
       padding-left: 2.5vw;
     }
     .contact-container {
-      padding-left: 5vw;
-      padding-right: 5vw;
-      height: 70%;
+      padding-left: 2.5vw;
+      padding-right: 2.5vw;
+      height: 35vh;
       padding-top: 5vh;
       padding-bottom: 5vh;
       a {
@@ -56,16 +56,21 @@
   }
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 800px) {
   .contact-us-section {
     flex-direction: column;
     height: 85vh;
 
     .contact-us-container {
+      h3 {
+        padding-left: 8.5vw;
+      }
       .contact-container {
+        padding-left: 8.5vw;
+        padding-right: 8.5vw;
         a {
           contact {
-            width: 85vw;
+            width: 100%;
             margin-top: 1.5vh;
             margin-bottom: 1.5vh;
           }
@@ -74,7 +79,7 @@
     }
 
     .map-size {
-      height: 50vh;
+      max-height: 30vh;
       // width: "100%";
     }
   }

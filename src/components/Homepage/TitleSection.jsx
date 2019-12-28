@@ -13,7 +13,7 @@ class TitleSection extends Component {
     const section2Parsed = JSON.parse(section2);
     return (
       <div id="title-section" className="title-section full-screen">
-        <section class="flags-container">
+        {/* <section class="flags-container">
           <section
             id="language-choices-container"
             class="language-choices-container flex-box"
@@ -22,18 +22,18 @@ class TitleSection extends Component {
               className="flag"
               onClick={() => this.changeLanguage("English")}
             >
-              {/* <img src={unitedKingdomFlag} alt="English" /> */}
+              <img src={unitedKingdomFlag} alt="English" />
               <h3>EN</h3>
             </div>
             <div
               className="flag"
               onClick={() => this.changeLanguage("Spanish")}
             >
-              {/* <img src={spanishFlag} alt="Spanish" /> */}
+              <img src={spanishFlag} alt="Spanish" />
               <h3>ES</h3>
             </div>
           </section>
-        </section>
+        </section> */}
         <section className="text-container flex-box-column-around">
           <section class="mission-statement-container">
             {/* <h2>{section1Parsed.title}</h2> */}

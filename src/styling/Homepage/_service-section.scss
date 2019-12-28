@@ -38,8 +38,9 @@
         // padding: 5vh 5vw 5vh 5vw;
 
         h3 {
-          font-family: $secondary-title-font;
+          font-family: $title-text-font;
           font-size: 2.5em;
+          text-align: center;
         }
 
         imagecontainer {
@@ -76,8 +77,9 @@
         // padding: 5vh 5vw 5vh 5vw;
 
         h3 {
-          font-family: $secondary-title-font;
+          font-family: $title-text-font;
           font-size: 2.5em;
+          text-align: center;
         }
 
         imagecontainer {
@@ -114,8 +116,14 @@
         // padding: 5vh 5vw 5vh 5vw;
 
         h3 {
-          font-family: $secondary-title-font;
+          font-family: $title-text-font;
           font-size: 2.5em;
+          text-align: center;
+        }
+
+        list {
+          padding-left: 2.5vw;
+          padding-right: 2.5vw;
         }
 
         imagecontainer {
@@ -128,7 +136,7 @@
   }
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 800px) {
   .service-section-container {
     .services-grid {
       flex-direction: column;

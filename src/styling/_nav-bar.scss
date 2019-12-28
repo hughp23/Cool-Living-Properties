@@ -6,6 +6,10 @@
 
 .navBar-container {
   background-color: $light-blue;
+
+  .flags-container {
+    float: right;
+  }
   .link-container {
     h4 {
       position: relative;
@@ -24,6 +28,28 @@
 
   .slideInMenu {
     display: none;
+
+    .language-choices-container {
+      min-width: 10vw;
+      background: whitesmoke;
+
+      .flag {
+        cursor: pointer;
+        width: 100%;
+        text-align: center;
+        padding: 1vh;
+        background: $light-grey;
+
+        h3 {
+          font-size: 1.25em;
+          text-align: center;
+          color: $dark-grey;
+        }
+        img {
+          max-height: 4vh;
+        }
+      }
+    }
   }
 
   .network-list-container {
@@ -78,7 +104,7 @@
 
   /* Color/shape of burger icon bars */
   .bm-burger-bars {
-    background: #000000;
+    background: $dark-grey;
   }
 
   /* Color/shape of burger icon bars on hover*/
@@ -95,7 +121,7 @@
 
   /* Color/shape of close button cross */
   .bm-cross {
-    background: #000000;
+    background: $dark-grey;
   }
 
   /*
@@ -109,7 +135,7 @@
 
   /* General sidebar styles */
   .bm-menu {
-    background: #111111;
+    background: $ivory;
     /* padding: 2.5em 1.5em 0; */
     font-size: 1.3em;
     overflow: hidden;
@@ -122,7 +148,7 @@
 
   /* Wrapper for item list */
   .bm-item-list ul {
-    color: #b8b7ad;
+    color: $dark-grey;
     padding: 0 !important;
     list-style-type: none !important;
     border: none;
@@ -130,14 +156,14 @@
   }
 
   .bm-item-list li {
-    color: #b8b7ad !important;
+    color: $dark-grey !important;
     padding: 1.4em;
     list-style-type: none !important;
     text-align: center;
   }
 
   .bm-item-list li a {
-    color: #b8b7ad;
+    color: $dark-grey;
     text-decoration: none;
     padding-left: 3.4em;
     padding-right: 5.4em;
@@ -149,18 +175,18 @@
   }
 
   .bm-item-list li:hover {
-    color: #111111;
-    background-color: #b8b7ad;
+    color: $ivory !important;
+    background-color: $dark-grey;
     transition: 0.5s ease-in-out;
   }
 
   .bm-item-list li a {
-    color: #b8b7ad;
+    color: $dark-grey;
     text-decoration: none;
   }
 
   .bm-item-list li a:hover {
-    color: #111111;
+    color: $ivory;
     transition: 0.3s ease-in-out;
   }
 
@@ -178,12 +204,17 @@
   }
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 800px) {
   .navBar-container {
     background-color: $light-blue;
     position: fixed;
     z-index: 200;
     width: 100%;
+
+    .flags-container {
+      display: none;
+    }
+
     h4 {
       font-size: 1em;
       display: none;

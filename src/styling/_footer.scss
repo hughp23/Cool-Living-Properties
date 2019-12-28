@@ -43,3 +43,25 @@
     }
   }
 }
+
+@media screen and (max-width: 800px) {
+  .footer {
+    .footer-nav-container {
+      width: 80vw;
+      p {
+        font-size: 0.75em;
+      }
+    }
+
+    .social-media-links-container {
+      width: 20vw;
+      .social-logo-container {
+        a {
+          img {
+            height: 3vh;
+          }
+        }
+      }
+    }
+  }
+}

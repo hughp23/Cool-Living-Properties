@@ -107,19 +107,47 @@ h3 {
 
 .flags-container {
   width: 100%;
-  padding-top: 4vh;
+  //padding-top: 4vh;
   position: absolute;
   z-index: 200;
 
   .language-choices-container {
-    min-width: 15vw;
+    min-width: 10vw;
     float: right;
+    background: whitesmoke;
+    //padding: 1vh;
+    border-radius: 0 0 1em 1em;
+
+    .left {
+      border-radius: 0 0 0 1em;
+    }
+
+    .right {
+      border-radius: 0 0 1em 0;
+    }
 
     .flag {
       cursor: pointer;
+      width: 100%;
+      text-align: center;
+      padding: 1vh;
+      background: $light-grey;
+
+      h3 {
+        font-size: 1.25em;
+        text-align: center;
+        color: $dark-grey;
+      }
       img {
         max-height: 4vh;
       }
     }
+  }
+}
+
+.checked {
+  background: $dark-grey !important;
+  h3 {
+    color: $light-grey !important;
   }
 }

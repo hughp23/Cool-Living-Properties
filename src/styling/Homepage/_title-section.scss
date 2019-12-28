@@ -7,7 +7,7 @@
 
   .flags-container {
     width: 100%;
-    padding-top: 4vh;
+    //padding-top: 4vh;
 
     .language-choices-container {
       min-width: 15vw;
@@ -83,17 +83,41 @@
   }
 }
 
-@media screen and (max-width: 420px) {
-  .core-values-container {
-    position: relative;
-    top: 10vh;
-    .core-values-list {
-      flex-direction: column !important;
-      height: 40vh;
+@media screen and (max-width: 800px) {
+  .title-section {
+    .mission-statement-container {
+      position: relative;
+      top: 15vh;
+
+      p {
+        font-size: 1.5em;
+      }
     }
   }
+}
 
-  .flags-container {
-    top: 10vh;
+@media screen and (max-width: 420px) {
+  // .core-values-container {
+  //   position: relative;
+  //   top: 10vh;
+  //   .core-values-list {
+  //     flex-direction: column !important;
+  //     height: 40vh;
+  //   }
+  // }
+
+  // .flags-container {
+  //   top: 10vh;
+  // }
+
+  .title-section {
+    .mission-statement-container {
+      position: relative;
+      top: 15vh;
+
+      p {
+        font-size: 1.5em;
+      }
+    }
   }
 }

@@ -91,7 +91,7 @@ class Homepage extends Component {
       ]
     },
     contactUs: {
-      title: "Do Not Hesitate to Contact Us"
+      title: "Contact Us"
     }
   };
   render() {
@@ -111,6 +111,29 @@ class Homepage extends Component {
           id="navBar-container"
           className="navBar-container navBar-height flex-box"
         >
+          <section class="flags-container">
+            <section
+              id="language-choices-container"
+              class="language-choices-container flex-box"
+            >
+              <div
+                id="en"
+                className="flag left checked"
+                onClick={() => this.changeLanguage("English")}
+              >
+                {/* <img src={unitedKingdomFlag} alt="English" /> */}
+                <h3>EN</h3>
+              </div>
+              <div
+                id="es"
+                className="flag right"
+                onClick={() => this.changeLanguage("Spanish")}
+              >
+                {/* <img src={spanishFlag} alt="Spanish" /> */}
+                <h3>ES</h3>
+              </div>
+            </section>
+          </section>
           <div className="link-container flex-box-column">
             <h4 onClick={() => this.scrollIntoView("home")}>{links.Nav1}</h4>
           </div>
@@ -171,6 +194,29 @@ class Homepage extends Component {
                     {links.Nav6}
                   </h5>
                 </li>
+                <li>
+                  <section
+                    id="language-choices-container"
+                    class="language-choices-container flex-box"
+                  >
+                    <div
+                      id="en"
+                      className="flag left checked"
+                      onClick={() => this.changeLanguage("English")}
+                    >
+                      {/* <img src={unitedKingdomFlag} alt="English" /> */}
+                      <h3>EN</h3>
+                    </div>
+                    <div
+                      id="es"
+                      className="flag right"
+                      onClick={() => this.changeLanguage("Spanish")}
+                    >
+                      {/* <img src={spanishFlag} alt="Spanish" /> */}
+                      <h3>ES</h3>
+                    </div>
+                  </section>
+                </li>
               </ul>
             </Menu>
           </div>
@@ -228,28 +274,23 @@ class Homepage extends Component {
   }
 
   changeLanguage = language => {
-    console.log(language, "language");
-    // this.setState({ language: language });
     localStorage.setItem("language", language);
     window.location.replace("/");
-    // this.forceUpdate();
-    // console.log(this.state, "this.state");
   };
 
   componentDidMount() {
     let { language } = this.state;
-    console.log(language, "language on mount");
 
     language =
       localStorage.getItem("language") === null
         ? "English"
         : localStorage.getItem("language");
-    console.log(language, "local storage language");
 
     if (language !== "English") {
-      getHomePageContent(language).then(data => {
-        console.log(data, "data");
+      document.getElementById("en").classList.remove("checked");
+      document.getElementById("es").classList.add("checked");
 
+      getHomePageContent(language).then(data => {
         this.setState({
           links: {
             Nav1: data.navBar[0].Nav1,
