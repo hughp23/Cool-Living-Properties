@@ -12,8 +12,10 @@ class OurTeamSection extends Component {
         <section className="our-team-img-container">
           <img src={ourTeamImg} alt="Jess and Antonio" />
         </section>
-        <section className="text">
-          <h3>{ourTeamParsed.title}</h3>
+        <section className="text flex-box-column">
+          <div className="header-container flex-box-column-around">
+            <h3>{ourTeamParsed.title}</h3>
+          </div>
           <section className="text-container">
             <p>{ourTeamParsed.text[0]}</p>
             <p>{ourTeamParsed.text[1]}</p>

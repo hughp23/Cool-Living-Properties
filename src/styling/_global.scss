@@ -151,3 +151,16 @@ h3 {
     color: $light-grey !important;
   }
 }
+
+@media screen and (max-width: 800px) {
+  .map-marker {
+    height: 450px;
+    width: 500px;
+  }
+
+  .map-marker-container {
+    position: absolute;
+    bottom: 50%;
+    right: 50%;
+  }
+}

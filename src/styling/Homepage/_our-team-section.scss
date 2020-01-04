@@ -4,24 +4,32 @@
   // border: blue 2px solid;
   width: 100%;
   background-color: $light-grey;
+  min-height: 100vh;
 
   .text {
     display: grid;
-    grid-template: 5% 95% / 100%;
+    grid-template: 10% 90% / 100%;
     grid-template-areas:
       "header"
       "text";
     min-height: 50vh;
+    padding-top: 2.5vh;
+    padding-bottom: 2.5vh;
 
-    h3 {
+    .header-container {
       grid-area: header;
-      padding-top: 8.5vh;
-      padding-bottom: 2.5vh;
-      padding-left: 2.5vw;
+      h3 {
+        // padding-top: 8.5vh;
+        // padding-bottom: 2.5vh;
+        padding-left: 2.5vw;
+      }
     }
 
     .text-container {
       grid-area: text;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
 
       p {
         // line-height: 3vh;
