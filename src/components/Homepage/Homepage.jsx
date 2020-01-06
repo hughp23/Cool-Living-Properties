@@ -200,7 +200,7 @@ class Homepage extends Component {
                     class="language-choices-container flex-box"
                   >
                     <div
-                      id="en"
+                      id="en-side"
                       className="flag left checked"
                       onClick={() => this.changeLanguage("English")}
                     >
@@ -208,7 +208,7 @@ class Homepage extends Component {
                       <h3>EN</h3>
                     </div>
                     <div
-                      id="es"
+                      id="es-side"
                       className="flag right"
                       onClick={() => this.changeLanguage("Spanish")}
                     >
@@ -223,25 +223,6 @@ class Homepage extends Component {
         </div>
         {/* <NavBar /> */}
         <section id="home">
-          {/* <section class="flags-container">
-            <section
-              id="language-choices-container"
-              class="language-choices-container flex-box"
-            >
-              <div
-                className="flag"
-                onClick={() => this.changeLanguage("English")}
-              >
-                <img src={unitedKingdomFlag} alt="English" />
-              </div>
-              <div
-                className="flag"
-                onClick={() => this.changeLanguage("Spanish")}
-              >
-                <img src={spanishFlag} alt="Spanish" />
-              </div>
-            </section>
-          </section> */}
           <TitleSection
             section1={JSON.stringify(titleSection.section1)}
             section2={JSON.stringify(titleSection.section2)}
@@ -289,6 +270,8 @@ class Homepage extends Component {
     if (language !== "English") {
       document.getElementById("en").classList.remove("checked");
       document.getElementById("es").classList.add("checked");
+      document.getElementById("en-side").classList.remove("checked");
+      document.getElementById("es-side").classList.add("checked");
 
       getHomePageContent(language).then(data => {
         this.setState({

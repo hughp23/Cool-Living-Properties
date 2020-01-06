@@ -12,7 +12,7 @@ const openDoor = require("../../assets/open-door.png");
 class ContactUsSection extends Component {
   state = {
     center: { lat: 39.56, lng: 3.046869 },
-    zoom: 10
+    zoom: 9
   };
   render() {
     const { contactUs } = this.props;

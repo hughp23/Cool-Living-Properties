@@ -33,9 +33,9 @@
     .text-container {
       grid-area: text;
 
-      p {
-        line-height: 3vh;
-      }
+      // p {
+      //   line-height: 3vh;
+      // }
     }
 
     .core-values-container {
@@ -102,7 +102,7 @@
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
   .aboutUs {
     flex-direction: column;
   }
@@ -130,6 +130,7 @@
       .text-container {
         padding-left: 0;
         height: 100%;
+        width: 100%;
         h3 {
           //position: relative;
           // top: -10%;

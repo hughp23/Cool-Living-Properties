@@ -49,6 +49,16 @@
   }
 }
 
+@media screen and (max-width: 1000px) {
+  .our-team-section {
+    .our-team-img-container {
+      img {
+        //width: 100%;
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 800px) {
   .our-team-section {
     .our-team-img-container {
