@@ -19,7 +19,11 @@ class ServicesSection extends Component {
     const keyHoldingParsed = JSON.parse(keyHolding);
     return (
       <div id="service-section-container" className="service-section-container">
-        {/* <h2>Our Services</h2> */}
+        <section className="main-header flex-box-column-around">
+          <section className="text-container flex-box-column-around">
+            <h2>Our Services</h2>
+          </section>
+        </section>
         <section id="services-grid" className="services-grid">
           <section className="development">
             <background>

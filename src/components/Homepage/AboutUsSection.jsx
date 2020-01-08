@@ -13,12 +13,14 @@ class AboutUsSection extends Component {
     return (
       <div id="about-us-section" className="about-us-section width-full">
         <section className="text flex-box-column-around">
-          <h3>{title}</h3>
+          <section className="flex-box-column-around">
+            <h3>{title}</h3>
+          </section>
           <section className="text-container flex-box-column-around">
             <p>{text}</p>
           </section>
           <section class="core-values-container flex-box-column-around">
-            <h3>{coreValuesParsed.title}</h3>
+            <h4>{coreValuesParsed.title}</h4>
             {/* Row styling of Core Values */}
             <section class="core-values-list">
               <section className="checkmark-and-text flex-box-between">

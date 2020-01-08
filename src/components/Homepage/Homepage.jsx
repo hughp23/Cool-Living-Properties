@@ -85,13 +85,14 @@ class Homepage extends Component {
       text: [
         "Hi there, we are Jess and Antonio",
         "With Jess’s background in business management and property and Antonio’s background in property maintenance, we are the ideal team to provide all the support and solutions for your property requirements.",
-        "So, call us now on +34 659 161 555",
+        "So, call us now on +34 648 711 395",
         "Come join the team!",
         "If you would like to come work with us and join our team, please send us your CV to coollivingproperties@gmail.com"
       ]
     },
     contactUs: {
-      title: "Contact Us"
+      title: "Contact Us",
+      openingTimes: "Mon-Fri 09:00-17:00"
     }
   };
   render() {
@@ -337,7 +338,8 @@ class Homepage extends Component {
             ]
           },
           contactUs: {
-            title: data.contactUs[0].Title
+            title: data.contactUs[0].Title,
+            openingTimes: data.contactUs[0].OpeningTimes
           }
         });
       });

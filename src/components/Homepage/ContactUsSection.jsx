@@ -8,6 +8,8 @@ const facebookLogo = require("../../assets/social-media-logos/facebook.png");
 const instaLogo = require("../../assets/social-media-logos/instagram.png");
 const linkedinLogo = require("../../assets/social-media-logos/linkedin.png");
 const openDoor = require("../../assets/open-door.png");
+const openSign = require("../../assets/open-sign.png");
+const mallorcaMap = require("../../assets/mallorca-map.png");
 
 class ContactUsSection extends Component {
   state = {
@@ -18,9 +20,10 @@ class ContactUsSection extends Component {
     const { contactUs } = this.props;
     const contactUsParsed = JSON.parse(contactUs);
     const title = contactUsParsed.title;
+    const openingTimes = contactUsParsed.openingTimes;
     return (
       <div id="contact-us-section" className="contact-us-section half-screen">
-        <section className="contact-us-container">
+        <section className="contact-us-container width-full">
           <h3>{title}</h3>
           <section className="contact-container flex-box-column">
             <a>
@@ -64,13 +67,13 @@ class ContactUsSection extends Component {
             </a>
             <a>
               <contact className="flex-box-between">
-                <img alt="Opening Times" src={openDoor} />
-                <h4>Mon-Fri 09:00-17:00</h4>
+                <img alt="Opening Times" src={openSign} />
+                <h4>{openingTimes}</h4>
               </contact>
             </a>
           </section>
         </section>
-        <section className="map-size" style={{ height: "100%", width: "100%" }}>
+        <section className="map-size">
           {/* <GoogleMapReact
             bootstrapURLKeys={{
               key: "AIzaSyDGCuXe-BpifRSBcMOsWAn-aALXQWFfPXs"
@@ -82,7 +85,7 @@ class ContactUsSection extends Component {
             //   this.handleApiLoaded(map, maps, places)
             // }
           ></GoogleMapReact> */}
-          <GoogleMapReact
+          {/* <GoogleMapReact
             bootstrapURLKeys={{
               key: "AIzaSyDGCuXe-BpifRSBcMOsWAn-aALXQWFfPXs"
             }}
@@ -99,7 +102,10 @@ class ContactUsSection extends Component {
               text="My Marker"
               className="map-marker-container"
             />
-          </GoogleMapReact>
+          </GoogleMapReact> */}
+          <section className="img-container">
+            <img src={mallorcaMap} alt="Map of Mallorca" />
+          </section>
         </section>
       </div>
     );
