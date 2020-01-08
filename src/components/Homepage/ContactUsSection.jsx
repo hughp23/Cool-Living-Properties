@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-import GoogleMapReact from "google-map-react";
+//import GoogleMapReact from "google-map-react";
 import "../../styling/Homepage/_contact-us-section.scss";
-import Marker from "./Marker";
+//import Marker from "./Marker";
 const phoneImg = require("../../assets/phone.png");
 const emailImg = require("../../assets/email.png");
 const facebookLogo = require("../../assets/social-media-logos/facebook.png");
 const instaLogo = require("../../assets/social-media-logos/instagram.png");
 const linkedinLogo = require("../../assets/social-media-logos/linkedin.png");
-const openDoor = require("../../assets/open-door.png");
+//const openDoor = require("../../assets/open-door.png");
 const openSign = require("../../assets/open-sign.png");
 const mallorcaMap = require("../../assets/mallorca-map.png");
 
@@ -73,7 +73,7 @@ class ContactUsSection extends Component {
             </a>
           </section>
         </section>
-        <section className="map-size">
+        <section className="map-size flex-box-column-around">
           {/* <GoogleMapReact
             bootstrapURLKeys={{
               key: "AIzaSyDGCuXe-BpifRSBcMOsWAn-aALXQWFfPXs"
@@ -103,8 +103,12 @@ class ContactUsSection extends Component {
               className="map-marker-container"
             />
           </GoogleMapReact> */}
-          <section className="img-container">
-            <img src={mallorcaMap} alt="Map of Mallorca" />
+          <section className="img-container flex-box-column-around">
+            <img
+              title="See shaded area for where we work"
+              src={mallorcaMap}
+              alt="Map of Mallorca"
+            />
           </section>
         </section>
       </div>

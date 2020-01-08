@@ -152,6 +152,12 @@ h3 {
   }
 }
 
+@media screen and (max-width: 1000px) {
+  .contact-us {
+    //max-height: 126vh;
+  }
+}
+
 @media screen and (max-width: 800px) {
   .map-marker {
     height: 450px;

@@ -248,7 +248,7 @@ class Homepage extends Component {
         <section id="photosOfOurWork">
           <PhotosOfWorkSection />
         </section>
-        <section id="contactUs">
+        <section id="contactUs" className="contact-us">
           <ContactUsSection contactUs={JSON.stringify(contactUs)} />
         </section>
       </div>
