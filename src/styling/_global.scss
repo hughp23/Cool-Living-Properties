@@ -59,6 +59,10 @@
   border-radius: 0.5em;
 }
 
+li {
+  font-family: $primary-text-font;
+}
+
 text,
 p {
   font-family: $primary-text-font;
@@ -66,7 +70,7 @@ p {
   padding-right: 2.5vw;
   // line-break: 2.5vh;
   // text-justify: inter-word;
-  text-align: justify;
+  text-align: left;
   line-height: 3.5vh;
 }
 
@@ -78,7 +82,7 @@ h5,
 h6 {
   font-family: $title-text-font;
   margin: 0;
-  text-align: justify;
+  text-align: left;
 }
 
 h3 {

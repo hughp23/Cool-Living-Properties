@@ -13,7 +13,7 @@
       "header"
       "text";
     min-height: 50vh;
-    padding-top: 2.5vh;
+    //padding-top: 2.5vh;
     padding-bottom: 2.5vh;
 
     .header-container {
@@ -78,6 +78,16 @@
         img {
           width: 100%;
         }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .our-team-section {
+    .our-team-img-container {
+      .img-container {
+        width: 75vw;
       }
     }
   }

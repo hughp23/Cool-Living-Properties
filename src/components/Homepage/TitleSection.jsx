@@ -1,16 +1,10 @@
 import React, { Component } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../../styling/Homepage/_title-section.scss";
-const coolLivingPropertiesLogo = require("../../assets/cool-living-properties-logo.png");
-const checkmark = require("../../assets/check-mark.png");
-const spanishFlag = require("../../assets/spain-flag.png");
-const unitedKingdomFlag = require("../../assets/united-kingdom-flag.png");
 
 class TitleSection extends Component {
   render() {
-    const { section1, section2 } = this.props;
+    const { section1 } = this.props;
     const section1Parsed = JSON.parse(section1);
-    const section2Parsed = JSON.parse(section2);
     return (
       <div id="title-section" className="title-section full-screen">
         {/* <section class="flags-container">
@@ -36,8 +30,14 @@ class TitleSection extends Component {
         </section> */}
         <section className="text-container flex-box-column-around">
           <section class="mission-statement-container">
-            {/* <h2>{section1Parsed.title}</h2> */}
-            <p>{section1Parsed.text}</p>
+            <h2>{section1Parsed.title}</h2>
+            <list>
+              <ul>
+                {section1Parsed.list.map(item => {
+                  return <li>{item}</li>;
+                })}
+              </ul>
+            </list>
           </section>
           {/* <section class="core-values-container">
             <h2>{section2Parsed.title}</h2>

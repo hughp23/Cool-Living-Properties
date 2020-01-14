@@ -9,38 +9,41 @@
   // width: 50vw;
   min-height: 50vh;
 
-  .contact-us-container {
-    max-width: 50vw;
-    h3 {
-      padding-top: 3.5vh;
-      font-size: 2em;
-      padding-left: 2.5vw;
-    }
-    .contact-container {
-      padding-left: 2.5vw;
-      padding-right: 2.5vw;
-      height: 35vh;
-      padding-top: 5vh;
-      padding-bottom: 5vh;
-      a {
-        text-decoration: none;
+  .contact-us-flex {
+    width: 55%;
+    .contact-us-container {
+      max-width: 30vw;
+      h3 {
+        padding-top: 3.5vh;
+        font-size: 2em;
+        padding-left: 2.5vw;
+      }
+      .contact-container {
+        padding-left: 2.5vw;
+        padding-right: 2.5vw;
+        height: 35vh;
+        padding-top: 5vh;
+        padding-bottom: 5vh;
+        a {
+          text-decoration: none;
 
-        contact {
-          //width: 20vw;
+          contact {
+            //width: 20vw;
 
-          img {
-            height: 3.5vh;
-          }
+            img {
+              height: 3.5vh;
+            }
 
-          h4 {
-            position: relative;
-            top: 2.5vh;
-            transform: translateY(-50%);
-            -webkit-transform: translateY(-50%);
-            -ms-transform: translateY(-50%);
-            height: 2.5vh;
-            text-decoration: none;
-            color: $dark-grey;
+            h4 {
+              position: relative;
+              top: 2.5vh;
+              transform: translateY(-50%);
+              -webkit-transform: translateY(-50%);
+              -ms-transform: translateY(-50%);
+              height: 2.5vh;
+              text-decoration: none;
+              color: $dark-grey;
+            }
           }
         }
       }

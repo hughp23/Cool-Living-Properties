@@ -33,7 +33,14 @@ class ServicesSection extends Component {
               <imagecontainer>
                 <img src={developmentImage} alt="development" />
               </imagecontainer>
-              <text>{developmentParsed.text}</text>
+              <text>{developmentParsed.subTitle}</text>
+              <list>
+                <ul>
+                  {developmentParsed.list.map(item => {
+                    return <li>{item}</li>;
+                  })}
+                </ul>
+              </list>
             </background>
             {/* <ReactCardFlip
               isFlipped={this.state.open3}
@@ -121,7 +128,14 @@ class ServicesSection extends Component {
               <imagecontainer>
                 <img src={keyHoldingImage} alt="development" />
               </imagecontainer>
-              <text>{keyHoldingParsed.text}</text>
+              <text>{keyHoldingParsed.subTitle}</text>
+              <list>
+                <ul>
+                  {keyHoldingParsed.list.map(item => {
+                    return <li>{item}</li>;
+                  })}
+                </ul>
+              </list>
             </background>
             {/* <ReactCardFlip
               isFlipped={this.state.open2}

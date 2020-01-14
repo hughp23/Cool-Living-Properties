@@ -34,24 +34,24 @@ class Homepage extends Component {
     titleSection: {
       section1: {
         title: "Our Mission Statement",
-        text:
-          'Our mission is to offer reliable, professional and friendly property maintenance, key-holding and development services whilst also providing a high level of customer service. We want to enable our clients to feel a "peace of mind" with their property / properties. We strive to also create and build upon lasting relationships with all of our clients.'
-      },
-      section2: {
-        title: "Our Core Values",
-        text: {
-          text1: "Customer Service",
-          text2: "Commitment to Quality",
-          text3: "Affordability",
-          text4: "Reliability"
-        }
+        list: [
+          "To offer reliable, professional and friendly  property maintenance, key-holding and development services",
+          "To Provide high level of customer service",
+          "Give you “peace of mind” with your property",
+          "Build upon lasting relationships with you"
+        ]
       }
     },
     ourServices: {
       development: {
         title: "Development",
-        text:
-          "Our Development Team with over 10 years’ experience on the Island, sources sites and co- ordinates either new build, refurbishment or modernisation projects with our team of        lawyers, architects and developers. This ranges from        apartments through to country estates."
+        subTitle: "Our development team...",
+        list: [
+          "Sources sites",
+          "Co-ordinates new builds, refurbishments & modernisation projects",
+          "Comprises of lawyers, architects, project managers and constructors",
+          "Work on urban apartments to country estates projects"
+        ]
       },
       maintenance: {
         title: "Maintenance",
@@ -71,14 +71,27 @@ class Homepage extends Component {
       },
       keyHolding: {
         title: "Key-holding",
-        text:
-          "Our Key-holding service involves your “peace of mind” package whereby we will hold your keys, visit your property once a month, inspect and check to see if there are any problems and  we will send you a monthly report to update you. Call us now     to find out more…"
+        subTitle:
+          "Our key-holding division includes your “peace of mind” package where we...",
+        list: [
+          "Hold your keys",
+          "Make regular property visits",
+          "Carry out inspection & checks",
+          "Send you regular reports"
+        ]
       }
     },
     aboutUs: {
       title: "About Us",
       text:
-        "We are a family run property maintenance, development and key-holding business established in Palma, Mallorca. We represent a team of professionals with a passion and commitment to provide high standards of service to our clients and to offer a “peace of mind” in their home."
+        "We are a family run property maintenance, development and key-holding business established in Palma, Mallorca. We represent a team of professionals with a passion and commitment to provide high standards of service to our clients and to offer a “peace of mind” in their home.",
+      ourCoreValuesTitle: "Our Core Values",
+      ourCoreValuesList: [
+        "Customer Service",
+        "Commitment to Quality",
+        "Affordability",
+        "Reliability"
+      ]
     },
     ourTeam: {
       title: "Our Team",
@@ -226,7 +239,6 @@ class Homepage extends Component {
         <section id="home">
           <TitleSection
             section1={JSON.stringify(titleSection.section1)}
-            section2={JSON.stringify(titleSection.section2)}
             language={language}
             changeLanguage={this.changeLanguage}
           />
@@ -287,27 +299,29 @@ class Homepage extends Component {
           titleSection: {
             section1: {
               title: data.titleSection[0].Title,
-              text: data.titleSection[0].Text
-            },
-            section2: {
-              title: data.titleSection[1].Title,
-              text: {
-                text1: data.titleSection[1].Text1,
-                text2: data.titleSection[1].Text2,
-                text3: data.titleSection[1].Text3,
-                text4: data.titleSection[1].Text4
-              }
+              list: [
+                data.titleSection[0].Text1,
+                data.titleSection[0].Text2,
+                data.titleSection[0].Text3,
+                data.titleSection[0].Text4
+              ]
             }
           },
           ourServices: {
             development: {
               title: data.ourServices[0].Title,
-              text: data.ourServices[0].Text
+              subTitle: data.ourServices[0].SubTitle,
+              list: [
+                data.ourServices[0].Text1,
+                data.ourServices[0].Text2,
+                data.ourServices[0].Text3,
+                data.ourServices[0].Text4
+              ]
             },
             maintenance: {
               title: data.ourServices[2].Title,
               text1: data.ourServices[2].Text1,
-              text2: data.ourServices[2].Text1,
+              text2: data.ourServices[2].Text2,
               list: [
                 data.ourServices[2].List1,
                 data.ourServices[2].List2,
@@ -319,13 +333,26 @@ class Homepage extends Component {
               ]
             },
             keyHolding: {
-              title: data.ourServices[1].Title,
-              text: data.ourServices[1].Text
+              title: data.ourServices[0].Title,
+              subTitle: data.ourServices[0].SubTitle,
+              list: [
+                data.ourServices[0].Text1,
+                data.ourServices[0].Text2,
+                data.ourServices[0].Text3,
+                data.ourServices[0].Text4
+              ]
             }
           },
           aboutUs: {
             title: data.aboutUs[0].Title,
-            text: data.aboutUs[0].Text
+            text: data.aboutUs[0].Text,
+            ourCoreValuesTitle: data.aboutUs[0].OurCoreValuesTitle,
+            ourCoreValuesList: [
+              data.aboutUs[0].CoreValue1,
+              data.aboutUs[0].CoreValue2,
+              data.aboutUs[0].CoreValue3,
+              data.aboutUs[0].CoreValue4
+            ]
           },
           ourTeam: {
             title: data.ourTeam[0].Title,
