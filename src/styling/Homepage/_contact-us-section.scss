@@ -15,7 +15,7 @@
       max-width: 30vw;
       h3 {
         padding-top: 3.5vh;
-        font-size: 2em;
+        font-size: 1.95em;
         padding-left: 2.5vw;
       }
       .contact-container {
@@ -72,19 +72,22 @@
     flex-direction: column;
     //height: 85vh;
 
-    .contact-us-container {
-      max-width: 100vw;
-      h3 {
-        padding-left: 8.5vw;
-      }
-      .contact-container {
-        padding-left: 8.5vw;
-        padding-right: 8.5vw;
-        a {
-          contact {
-            width: 100%;
-            margin-top: 1.5vh;
-            margin-bottom: 1.5vh;
+    .contact-us-flex {
+      width: 100%;
+      .contact-us-container {
+        max-width: 100vw;
+        h3 {
+          padding-left: 8.5vw;
+        }
+        .contact-container {
+          padding-left: 8.5vw;
+          padding-right: 8.5vw;
+          a {
+            contact {
+              width: 100%;
+              margin-top: 1.5vh;
+              margin-bottom: 1.5vh;
+            }
           }
         }
       }

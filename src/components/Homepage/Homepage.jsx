@@ -33,7 +33,7 @@ class Homepage extends Component {
     },
     titleSection: {
       section1: {
-        title: "Our Mission Statement",
+        title: "Our mission is...",
         list: [
           "To offer reliable, professional and friendly  property maintenance, key-holding and development services",
           "To Provide high level of customer service",
@@ -43,6 +43,7 @@ class Homepage extends Component {
       }
     },
     ourServices: {
+      title: "Our Services",
       development: {
         title: "Development",
         subTitle: "Our development team...",
@@ -245,6 +246,7 @@ class Homepage extends Component {
         </section>
         <section id="ourServices">
           <ServiceSection
+            title={JSON.stringify(ourServices.title)}
             development={JSON.stringify(ourServices.development)}
             maintenance={JSON.stringify(ourServices.maintenance)}
             keyHolding={JSON.stringify(ourServices.keyHolding)}
@@ -308,6 +310,7 @@ class Homepage extends Component {
             }
           },
           ourServices: {
+            title: data.ourServices[3].Text,
             development: {
               title: data.ourServices[0].Title,
               subTitle: data.ourServices[0].SubTitle,
@@ -333,20 +336,20 @@ class Homepage extends Component {
               ]
             },
             keyHolding: {
-              title: data.ourServices[0].Title,
-              subTitle: data.ourServices[0].SubTitle,
+              title: data.ourServices[1].Title,
+              subTitle: data.ourServices[1].SubTitle,
               list: [
-                data.ourServices[0].Text1,
-                data.ourServices[0].Text2,
-                data.ourServices[0].Text3,
-                data.ourServices[0].Text4
+                data.ourServices[1].Text1,
+                data.ourServices[1].Text2,
+                data.ourServices[1].Text3,
+                data.ourServices[1].Text4
               ]
             }
           },
           aboutUs: {
             title: data.aboutUs[0].Title,
             text: data.aboutUs[0].Text,
-            ourCoreValuesTitle: data.aboutUs[0].OurCoreValuesTitle,
+            ourCoreValuesTitle: data.aboutUs[0].CoreValuesTitle,
             ourCoreValuesList: [
               data.aboutUs[0].CoreValue1,
               data.aboutUs[0].CoreValue2,

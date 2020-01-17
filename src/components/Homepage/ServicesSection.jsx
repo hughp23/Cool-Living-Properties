@@ -13,7 +13,8 @@ class ServicesSection extends Component {
     open3: false
   };
   render() {
-    const { development, maintenance, keyHolding } = this.props;
+    const { title, development, maintenance, keyHolding } = this.props;
+    const titleParsed = JSON.parse(title);
     const developmentParsed = JSON.parse(development);
     const maintenanceParsed = JSON.parse(maintenance);
     const keyHoldingParsed = JSON.parse(keyHolding);
@@ -21,7 +22,7 @@ class ServicesSection extends Component {
       <div id="service-section-container" className="service-section-container">
         <section className="main-header flex-box-column-around">
           <section className="text-container flex-box-column-around">
-            <h2>Our Services</h2>
+            <h2>{titleParsed}</h2>
           </section>
         </section>
         <section id="services-grid" className="services-grid">

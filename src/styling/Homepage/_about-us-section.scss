@@ -14,7 +14,7 @@
 
   .text {
     display: grid;
-    grid-template: 10% 40% 50% / 100%;
+    grid-template: 10% 45% 45% / 100%;
     grid-template-areas:
       "header"
       "text"
@@ -28,10 +28,11 @@
       // padding-top: 8.5vh;
       // padding-bottom: 2.5vh;
       padding-left: 2.5vw;
+      font-size: 1.95em;
     }
 
     h4 {
-      font-size: 1.1rem;
+      font-size: 1.3rem;
       padding-left: 2.5vw;
     }
 
@@ -86,7 +87,7 @@
               margin-left: 1vw;
               font-size: 0.75em;
               // padding-left: 0;
-              text-align: center;
+              text-align: left;
               padding-left: 1.25vw;
               padding-right: 1.25vw;
               font-family: $primary-text-font;
@@ -99,7 +100,7 @@
 
   .about-us-img-container {
     //border: red 2px solid;
-    min-height: 50vh;
+    height: 50vh;
 
     img {
       height: 50vh;
@@ -147,7 +148,7 @@
           margin-left: 1vw;
           font-size: 0.75em;
           // padding-left: 0;
-          text-align: center;
+          text-align: left;
           padding-left: 1.25vw;
           padding-right: 1.25vw;
         }

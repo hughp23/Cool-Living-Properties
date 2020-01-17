@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../../styling/Homepage/_title-section.scss";
+const checkmark = require("../../assets/check-mark.png");
 
 class TitleSection extends Component {
   render() {
@@ -30,14 +31,35 @@ class TitleSection extends Component {
         </section> */}
         <section className="text-container flex-box-column-around">
           <section class="mission-statement-container">
-            <h2>{section1Parsed.title}</h2>
-            <list>
-              <ul>
-                {section1Parsed.list.map(item => {
-                  return <li>{item}</li>;
-                })}
-              </ul>
-            </list>
+            <section className="flex-box">
+              <list>
+                <h2>{section1Parsed.title}</h2>
+                <section className="flex-box">
+                  <ul>
+                    {section1Parsed.list.map(item => {
+                      return (
+                        <li>
+                          {
+                            <section className="checkmark-and-text flex-box-between">
+                              <div className="img-container">
+                                <img
+                                  class="checkmark"
+                                  src={checkmark}
+                                  alt="checkmark"
+                                />
+                              </div>
+                              <div className="text-container flex-box-column-around">
+                                <h3>{item}</h3>
+                              </div>
+                            </section>
+                          }
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </section>
+              </list>
+            </section>
           </section>
           {/* <section class="core-values-container">
             <h2>{section2Parsed.title}</h2>

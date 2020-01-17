@@ -33,7 +33,45 @@
     padding: 5vh 10vw 5vh 10vw;
 
     h2 {
-      margin: 4vh;
+      margin-top: 4vh;
+      margin-bottom: 4vh;
+      margin-right: 4vw;
+      text-align: left;
+      margin-left: 3vw;
+      font-size: 2.5em;
+    }
+
+    list {
+      padding-left: 2.5vw;
+      padding-right: 2.5vw;
+
+      ul {
+        list-style-type: none;
+        padding-left: 20%;
+        li {
+          line-height: 5vh;
+          text-align: left;
+          padding-left: 1.25vw;
+
+          .checkmark-and-text {
+            .img-container {
+              margin-top: 0.5vh;
+              .checkmark {
+                height: 2.5vh;
+              }
+            }
+
+            .text-container {
+              h3 {
+                padding-left: 1.25vw;
+                font-size: 1.5em;
+                width: 65%;
+                font-family: "Montserrat", sans-serif;
+              }
+            }
+          }
+        }
+      }
     }
 
     p {
@@ -88,6 +126,42 @@
     .mission-statement-container {
       position: relative;
       top: 15vh;
+
+      h2 {
+        margin-bottom: 2vh;
+        margin-left: 8vw;
+        font-size: 2em;
+      }
+
+      list {
+        padding-left: 0;
+        padding-right: 0;
+
+        ul {
+          padding: 0;
+          li {
+            line-height: 5vh;
+            text-align: left;
+            padding-left: 1.25vw;
+
+            .checkmark-and-text {
+              .img-container {
+                .checkmark {
+                  height: 2.5vh;
+                }
+              }
+
+              .text-container {
+                h3 {
+                  padding-left: 3.5vw;
+                  font-size: 1em;
+                  width: 90%;
+                }
+              }
+            }
+          }
+        }
+      }
 
       p {
         font-size: 1.5em;
