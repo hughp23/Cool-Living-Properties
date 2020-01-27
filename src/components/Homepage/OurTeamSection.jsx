@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../../styling/Homepage/_our-team-section.scss";
 const ourTeamImg = require("../../assets/our-team-img.JPG");
+const ourTeamImg2 = require("../../assets/our-team-img-2.JPG");
 
 class OurTeamSection extends Component {
   render() {
@@ -11,7 +12,7 @@ class OurTeamSection extends Component {
       <div id="our-team-section" className="our-team-section width-full">
         <section className="our-team-img-container flex-box">
           <section className="img-container flex-box-column-around">
-            <img src={ourTeamImg} alt="Jess and Antonio" />
+            <img src={ourTeamImg2} alt="Jess and Antonio" />
           </section>
         </section>
         <section className="text flex-box-column">

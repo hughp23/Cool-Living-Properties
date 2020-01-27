@@ -97,8 +97,8 @@ class Homepage extends Component {
     ourTeam: {
       title: "Our Team",
       text: [
-        "Hi there, we are Jess and Antonio",
-        "With Jess’s background in business management and property and Antonio’s background in property maintenance, we are the ideal team to provide all the support and solutions for your property requirements.",
+        "Hi there, I am Antonio...",
+        "With my background in property maintenance and with the rest of my team of plumbers, electricians and constructors as well as lawyers, architects and project managers, we are the ideal team to provide all the support and solutions for your property requirements.",
         "So, call us now on +34 648 711 395",
         "Come join the team!",
         "If you would like to come work with us and join our team, please send us your CV to coollivingproperties@gmail.com"
