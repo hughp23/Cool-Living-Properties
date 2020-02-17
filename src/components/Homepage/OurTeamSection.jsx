@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "../../styling/Homepage/_our-team-section.scss";
-const ourTeamImg = require("../../assets/our-team-img.JPG");
+// const ourTeamImg = require("../../assets/our-team-img.JPG");
 const ourTeamImg2 = require("../../assets/our-team-img-2.JPG");
 
 class OurTeamSection extends Component {

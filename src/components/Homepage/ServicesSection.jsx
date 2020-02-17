@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import Popup from "reactjs-popup";
-import ReactCardFlip from "react-card-flip";
 import "../../styling/Homepage/_service-section.scss";
 const maintenanceImage = require("../../assets/maintenance-img.png");
 const keyHoldingImage = require("../../assets/key-holding-img.png");

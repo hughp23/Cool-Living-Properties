@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import "../../styling/Homepage/_photo-gallery-section.scss";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
-const coolLivingPropertiesLogo = require("../../assets/cool-living-properties-logo.png");
-const sampleImage = require("../../assets/sample-image.png");
 const img_1 = require("../../assets/photo-gallery/photo_1.PNG");
 const img_2 = require("../../assets/photo-gallery/photo_2.PNG");
 const img_3 = require("../../assets/photo-gallery/photo_3.PNG");

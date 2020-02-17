@@ -1,13 +1,7 @@
 import React from "react";
-import { Router, Link } from "@reach/router";
+import { Link } from "@reach/router";
 import "../styling/_nav-bar.scss";
 import "../styling/_global.scss";
-import TitleSection from "./Homepage/TitleSection";
-import ServicesSection from "./Homepage/ServicesSection";
-import AboutUsSection from "./Homepage/AboutUsSection";
-import OurTeamSection from "./Homepage/OurTeamSection";
-import PhotosOfWorkSection from "./Homepage/PhotosOfWorkSection";
-import ContactUsSection from "./Homepage/ContactUsSection";
 const coolLivingPropertiesLogo = require("../assets/cool-living-properties-logo.png");
 
 const NavBar = () => {

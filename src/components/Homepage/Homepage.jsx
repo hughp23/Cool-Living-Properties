@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import { Router, Link } from "@reach/router";
 import { slide as Menu } from "react-burger-menu";
-import NavBar from "../NavBar";
 import TitleSection from "./TitleSection";
 import ServiceSection from "./ServicesSection";
 import AboutUsSection from "./AboutUsSection";
@@ -10,15 +8,9 @@ import PhotosOfWorkSection from "./PhotosOfWorkSection";
 import ContactUsSection from "./ContactUsSection";
 import "../../styling/_nav-bar.scss";
 import "../../styling/_global.scss";
-import {
-  getHomePageContent,
-  testFunction,
-  getTitleSectionContent
-} from "../../utils";
+import { getHomePageContent } from "../../utils";
 import "firebase/firestore";
 const coolLivingPropertiesLogo = require("../../assets/cool-living-properties-logo.png");
-const spanishFlag = require("../../assets/spain-flag.png");
-const unitedKingdomFlag = require("../../assets/united-kingdom-flag.png");
 
 class Homepage extends Component {
   state = {
