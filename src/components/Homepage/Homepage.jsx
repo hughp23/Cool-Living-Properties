@@ -136,16 +136,21 @@ class Homepage extends Component {
                 className="flag left checked"
                 onClick={() => this.changeLanguage("English")}
               >
-                {/* <img src={unitedKingdomFlag} alt="English" /> */}
                 <h3>EN</h3>
               </div>
               <div
                 id="es"
-                className="flag right"
+                className="flag"
                 onClick={() => this.changeLanguage("Spanish")}
               >
-                {/* <img src={spanishFlag} alt="Spanish" /> */}
                 <h3>ES</h3>
+              </div>
+              <div
+                id="de"
+                className="flag right"
+                onClick={() => this.changeLanguage("German")}
+              >
+                <h3>DE</h3>
               </div>
             </section>
           </section>
@@ -219,16 +224,21 @@ class Homepage extends Component {
                       className="flag left checked"
                       onClick={() => this.changeLanguage("English")}
                     >
-                      {/* <img src={unitedKingdomFlag} alt="English" /> */}
                       <h3>EN</h3>
                     </div>
                     <div
                       id="es-side"
-                      className="flag right"
+                      className="flag"
                       onClick={() => this.changeLanguage("Spanish")}
                     >
-                      {/* <img src={spanishFlag} alt="Spanish" /> */}
                       <h3>ES</h3>
+                    </div>
+                    <div
+                      id="de-side"
+                      className="flag right"
+                      onClick={() => this.changeLanguage("German")}
+                    >
+                      <h3>DE</h3>
                     </div>
                   </section>
                 </li>
@@ -283,10 +293,23 @@ class Homepage extends Component {
         : localStorage.getItem("language");
 
     if (language !== "English") {
-      document.getElementById("en").classList.remove("checked");
-      document.getElementById("es").classList.add("checked");
-      document.getElementById("en-side").classList.remove("checked");
-      document.getElementById("es-side").classList.add("checked");
+      if (language === "Spanish") {
+        document.getElementById("en").classList.remove("checked");
+        document.getElementById("de").classList.remove("checked");
+        document.getElementById("es").classList.add("checked");
+        document.getElementById("en-side").classList.remove("checked");
+        document.getElementById("de-side").classList.remove("checked");
+        document.getElementById("es-side").classList.add("checked");
+      }
+
+      if (language === "German") {
+        document.getElementById("en").classList.remove("checked");
+        document.getElementById("es").classList.remove("checked");
+        document.getElementById("de").classList.add("checked");
+        document.getElementById("en-side").classList.remove("checked");
+        document.getElementById("es-side").classList.remove("checked");
+        document.getElementById("de-side").classList.add("checked");
+      }
 
       getHomePageContent(language).then(data => {
         this.setState({

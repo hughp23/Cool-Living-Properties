@@ -99,7 +99,6 @@ const getHomePageContent = async (language, section, subSection) => {
       });
       translation.contactUs = data;
     });
-  console.log(translation, "translation");
 
   return translation;
 };
