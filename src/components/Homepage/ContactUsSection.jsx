@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { sendEmail } from '../../functions.js'
 //import GoogleMapReact from "google-map-react";
 import "../../styling/Homepage/_contact-us-section.scss";
 //import Marker from "./Marker";
@@ -14,7 +15,12 @@ const mallorcaMap = require("../../assets/mallorca-map.png");
 class ContactUsSection extends Component {
   state = {
     center: { lat: 39.56, lng: 3.046869 },
-    zoom: 9
+    zoom: 9,
+    nameMail: "",
+    emailMail: "",
+    phoneMail: "",
+    subjMail: "",
+    bodyMail: ""
   };
   render() {
     const { contactUs } = this.props;
@@ -109,11 +115,24 @@ class ContactUsSection extends Component {
             />
           </GoogleMapReact> */}
           <section className="img-container flex-box-column-around">
-            <img
+            {/* <img
               title="See shaded area for where we work"
               src={mallorcaMap}
               alt="Map of Mallorca"
-            />
+            /> */}
+            <form>
+              <label>Name</label>
+              <input id="nameMail" type="text" onChange={this.hanedlChange} required />
+              <label>Email</label>
+              <input id="emailMail" type="text" onChange={this.hanedlChange} required />
+              <label>Phone</label>
+              <input id="phoneMail" type="text" onChange={this.hanedlChange} required />
+              <label>Subject</label>
+              <input id="subjMail" type="text" onChange={this.hanedlChange} required />
+              <label>Query</label>
+              <input id="bodyMail" type="text" onChange={this.hanedlChange} required />
+              <button type="button" onClick={() => this.sendEmailEnquriy()}>Send Query</button>
+            </form>
           </section>
         </section>
       </div>
@@ -121,14 +140,25 @@ class ContactUsSection extends Component {
   }
 
   componentDidMount() {}
-  handleApiLoaded(map, maps, places) {
-    console.log("handling api");
-    // // Get bounds by our places
-    // const bounds = this.getMapBounds(map, maps, places);
-    // // Fit map to bounds
-    // map.fitBounds(bounds);
-    // // Bind the resize listener
-    // this.bindResizeListener(map, maps, bounds);
+    handleApiLoaded(map, maps, places) {
+      console.log("handling api");
+      // // Get bounds by our places
+      // const bounds = this.getMapBounds(map, maps, places);
+      // // Fit map to bounds
+      // map.fitBounds(bounds);
+      // // Bind the resize listener
+      // this.bindResizeListener(map, maps, bounds);
+  }
+
+  hanedlChange = event => {
+    const { id, value } = event.target;
+    this.setState({ [id]: value });
+  };
+
+  sendEmailEnquriy = () => {
+    const { nameMail, emailMail, phoneMail, subjMail, bodyMail } = this.state;
+    console.log(phoneMail, 'phoneMail');
+    sendEmail(nameMail, emailMail, phoneMail, subjMail, bodyMail);
   }
 }
 

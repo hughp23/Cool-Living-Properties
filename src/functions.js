@@ -2,8 +2,9 @@ import axios from "axios";
 
 const BASE_EMAIL_URL = "https://us-central1-cool-living-properties.cloudfunctions.net";
 
-export const sendEmail = async (dest, subj, body) => {
-  const { data } = await axios.get(`${BASE_EMAIL_URL}/sendMail?dest=${dest}&subj=${subj}&query=${body}`);
+export const sendEmail = async (name, email, phone, subj, body) => {
+  console.log(phone, 'phone');
+  const { data } = await axios.get(`${BASE_EMAIL_URL}/sendMail?name=${name}&email=${email}&phone${phone}&subj=${subj}&query=${body}`);
   console.log(data, 'data before');
   return data;
 };
