@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { sendEmail } from '../../functions.js'
+import { sendEmail } from "../../functions.js";
+import { addCustomerQuery } from "../../utils.js";
 //import GoogleMapReact from "google-map-react";
 import "../../styling/Homepage/_contact-us-section.scss";
 //import Marker from "./Marker";
@@ -10,13 +11,14 @@ const instaLogo = require("../../assets/social-media-logos/instagram.png");
 const linkedinLogo = require("../../assets/social-media-logos/linkedin.png");
 //const openDoor = require("../../assets/open-door.png");
 const openSign = require("../../assets/open-sign.png");
-const mallorcaMap = require("../../assets/mallorca-map.png");
+// const mallorcaMap = require("../../assets/mallorca-map.png");
 
 class ContactUsSection extends Component {
   state = {
     center: { lat: 39.56, lng: 3.046869 },
     zoom: 9,
-    nameMail: "",
+    firstNameMail: "",
+    lastNameMail: "",
     emailMail: "",
     phoneMail: "",
     subjMail: "",
@@ -84,7 +86,7 @@ class ContactUsSection extends Component {
             </section>
           </section>
         </section>
-        <section className="map-size flex-box-column-around">
+        <section className="map-size width-full flex-box-column-around">
           {/* <GoogleMapReact
             bootstrapURLKeys={{
               key: "AIzaSyDGCuXe-BpifRSBcMOsWAn-aALXQWFfPXs"
@@ -121,17 +123,77 @@ class ContactUsSection extends Component {
               alt="Map of Mallorca"
             /> */}
             <form>
-              <label>Name</label>
-              <input id="nameMail" type="text" onChange={this.hanedlChange} required />
-              <label>Email</label>
-              <input id="emailMail" type="text" onChange={this.hanedlChange} required />
-              <label>Phone</label>
-              <input id="phoneMail" type="text" onChange={this.hanedlChange} required />
-              <label>Subject</label>
-              <input id="subjMail" type="text" onChange={this.hanedlChange} required />
-              <label>Query</label>
-              <input id="bodyMail" type="text" onChange={this.hanedlChange} required />
-              <button type="button" onClick={() => this.sendEmailEnquriy()}>Send Query</button>
+              <div className="flex-box">
+                <div className="width-full flex-box-column">
+                  <label>First Name</label>
+                  <input
+                    id="firstNameMail"
+                    className="form-input"
+                    type="text"
+                    onChange={this.hanedlChange}
+                    required
+                  />
+                </div>
+                <div className="width-full flex-box-column">
+                  <label>Last Name</label>
+                  <input
+                    id="lastNameMail"
+                    className="form-input"
+                    type="text"
+                    onChange={this.hanedlChange}
+                    required
+                  />
+                </div>
+              </div>
+              <div className="flex-box">
+                <div className="width-full flex-box-column">
+                  <label>Email</label>
+                  <input
+                    id="emailMail"
+                    className="form-input"
+                    type="email"
+                    onChange={this.hanedlChange}
+                    required
+                  />
+                </div>
+                <div className="width-full flex-box-column">
+                  <label>Phone</label>
+                  <input
+                    id="phoneMail"
+                    className="form-input"
+                    type="phone"
+                    onChange={this.hanedlChange}
+                    required
+                  />
+                </div>
+              </div>
+              <div className="width-full flex-box-column">
+                <label>Subject</label>
+                <input
+                  id="subjMail"
+                  className="form-input"
+                  type="text"
+                  onChange={this.hanedlChange}
+                  required
+                />
+              </div>
+              <div className=" width-full flex-box-column">
+                <label>Query</label>
+                <textarea
+                  id="bodyMail"
+                  className="form-input query-textarea"
+                  type="text"
+                  onChange={this.hanedlChange}
+                  required
+                />
+              </div>
+              <button
+                type="button"
+                className="button-lrg"
+                onClick={() => this.sendEmailEnquriy()}
+              >
+                Send Query
+              </button>
             </form>
           </section>
         </section>
@@ -140,14 +202,14 @@ class ContactUsSection extends Component {
   }
 
   componentDidMount() {}
-    handleApiLoaded(map, maps, places) {
-      console.log("handling api");
-      // // Get bounds by our places
-      // const bounds = this.getMapBounds(map, maps, places);
-      // // Fit map to bounds
-      // map.fitBounds(bounds);
-      // // Bind the resize listener
-      // this.bindResizeListener(map, maps, bounds);
+  handleApiLoaded(map, maps, places) {
+    console.log("handling api");
+    // // Get bounds by our places
+    // const bounds = this.getMapBounds(map, maps, places);
+    // // Fit map to bounds
+    // map.fitBounds(bounds);
+    // // Bind the resize listener
+    // this.bindResizeListener(map, maps, bounds);
   }
 
   hanedlChange = event => {
@@ -155,11 +217,58 @@ class ContactUsSection extends Component {
     this.setState({ [id]: value });
   };
 
-  sendEmailEnquriy = () => {
-    const { nameMail, emailMail, phoneMail, subjMail, bodyMail } = this.state;
-    console.log(phoneMail, 'phoneMail');
-    sendEmail(nameMail, emailMail, phoneMail, subjMail, bodyMail);
-  }
+  sendEmailEnquriy = async () => {
+    const {
+      firstNameMail,
+      lastNameMail,
+      emailMail,
+      phoneMail,
+      subjMail,
+      bodyMail
+    } = this.state;
+
+    const nameMail = `${firstNameMail} ${lastNameMail}`.trim();
+    let queryId = "";
+    if (
+      firstNameMail !== "" &&
+      lastNameMail !== "" &&
+      emailMail !== "" &&
+      phoneMail !== "" &&
+      subjMail !== "" &&
+      bodyMail !== ""
+    ) {
+      try {
+        try {
+          await addCustomerQuery(
+            firstNameMail,
+            lastNameMail,
+            emailMail,
+            phoneMail,
+            subjMail,
+            bodyMail
+          ).then(result => {
+            console.log(result, "result");
+            queryId = result;
+          });
+        } finally {
+          await sendEmail(
+            queryId,
+            nameMail,
+            emailMail,
+            phoneMail,
+            subjMail,
+            bodyMail
+          ).then(result => {
+            console.log(result, "result");
+          });
+        }
+      } catch (err) {
+        console.log(err, "err");
+      }
+    } else {
+      alert("All fields are required to be filled in.");
+    }
+  };
 }
 
 export default ContactUsSection;
