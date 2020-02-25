@@ -1,0 +1,13 @@
+@import "./branding.scss";
+
+.form-input {
+  padding: 1.5vh 1.5vw 1.5vh 1.5vw;
+  margin: 1vh 3vw 1vh 3vw;
+  border-radius: 0.5em;
+  border: none;
+}
+
+.query-textarea {
+  height: 10vh;
+  resize: none;
+}
