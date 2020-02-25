@@ -229,14 +229,26 @@ class ContactUsSection extends Component {
 
     const nameMail = `${firstNameMail} ${lastNameMail}`.trim();
     let queryId = "";
-    if (
-      firstNameMail !== "" &&
-      lastNameMail !== "" &&
-      emailMail !== "" &&
-      phoneMail !== "" &&
-      subjMail !== "" &&
-      bodyMail !== ""
-    ) {
+    let errMsg = "";
+      if (firstNameMail !== "") {
+        errMsg += "First Name is required\n"
+      }
+      if (lastNameMail !== "") {
+        errMsg += "Last Name is required\n"
+      }
+      if (emailMail !== "") {
+        errMsg += "Email is required\n"
+      }
+      if (phoneMail !== "") {
+        errMsg += "Phone is required\n"
+      }
+      if (subjMail !== "") {
+        errMsg += "A subject is required\n"
+      }
+      if (bodyMail !== "") {
+        errMsg += "Please write a query\n"
+      }
+      if (errMsg !== "") {
       try {
         try {
           await addCustomerQuery(
@@ -266,7 +278,7 @@ class ContactUsSection extends Component {
         console.log(err, "err");
       }
     } else {
-      alert("All fields are required to be filled in.");
+      alert(errMsg);
     }
   };
 }
