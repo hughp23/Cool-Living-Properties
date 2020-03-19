@@ -130,7 +130,7 @@ class ContactUsSection extends Component {
                     id="firstNameMail"
                     className="form-input"
                     type="text"
-                    onChange={this.hanedlChange}
+                    onChange={this.handleChange}
                     required
                   />
                 </div>
@@ -140,7 +140,7 @@ class ContactUsSection extends Component {
                     id="lastNameMail"
                     className="form-input"
                     type="text"
-                    onChange={this.hanedlChange}
+                    onChange={this.handleChange}
                     required
                   />
                 </div>
@@ -152,7 +152,7 @@ class ContactUsSection extends Component {
                     id="emailMail"
                     className="form-input"
                     type="email"
-                    onChange={this.hanedlChange}
+                    onChange={this.handleChange}
                     required
                   />
                 </div>
@@ -162,7 +162,7 @@ class ContactUsSection extends Component {
                     id="phoneMail"
                     className="form-input"
                     type="phone"
-                    onChange={this.hanedlChange}
+                    onChange={this.handleChange}
                     required
                   />
                 </div>
@@ -173,7 +173,7 @@ class ContactUsSection extends Component {
                   id="subjMail"
                   className="form-input"
                   type="text"
-                  onChange={this.hanedlChange}
+                  onChange={this.handleChange}
                   required
                 />
               </div>
@@ -183,7 +183,7 @@ class ContactUsSection extends Component {
                   id="bodyMail"
                   className="form-input query-textarea"
                   type="text"
-                  onChange={this.hanedlChange}
+                  onChange={this.handleChange}
                   required
                 />
               </div>
@@ -213,7 +213,7 @@ class ContactUsSection extends Component {
     // this.bindResizeListener(map, maps, bounds);
   }
 
-  hanedlChange = event => {
+  handleChange = event => {
     const { id, value } = event.target;
     this.setState({ [id]: value });
   };
