@@ -122,52 +122,52 @@ class ContactUsSection extends Component {
               src={mallorcaMap}
               alt="Map of Mallorca"
             /> */}
-            <form>
+            <form onSubmit={() => this.sendEmailEnquriy()}>
               <div className="flex-box">
                 <div className="width-full flex-box-column">
-                  <label>First Name</label>
                   <input
                     id="firstNameMail"
                     className="form-input"
                     type="text"
                     onChange={this.handleChange}
                     required
+                    placeholder="First Name"
                   />
                 </div>
                 <div className="width-full flex-box-column">
-                  <label>Last Name</label>
                   <input
                     id="lastNameMail"
                     className="form-input"
                     type="text"
                     onChange={this.handleChange}
                     required
+                    placeholder="Last Name"
                   />
                 </div>
               </div>
               <div className="flex-box">
                 <div className="width-full flex-box-column">
-                  <label>Email</label>
                   <input
                     id="emailMail"
                     className="form-input"
                     type="email"
                     onChange={this.handleChange}
                     required
+                    placeholder="Email"
                   />
                 </div>
                 <div className="width-full flex-box-column">
-                  <label>Phone</label>
                   <input
                     id="phoneMail"
                     className="form-input"
                     type="phone"
                     onChange={this.handleChange}
                     required
+                    placeholder="Phone"
                   />
                 </div>
               </div>
-              <div className="width-full flex-box-column">
+              {/* <div className="width-full flex-box-column">
                 <label>Subject</label>
                 <input
                   id="subjMail"
@@ -176,15 +176,15 @@ class ContactUsSection extends Component {
                   onChange={this.handleChange}
                   required
                 />
-              </div>
+              </div> */}
               <div className=" width-full flex-box-column">
-                <label>Query</label>
                 <textarea
                   id="bodyMail"
                   className="form-input query-textarea"
                   type="text"
                   onChange={this.handleChange}
                   required
+                  placeholder="What would you like to know...?"
                 />
               </div>
               <div class="g-recaptcha" data-sitekey="your_site_key"></div>
@@ -193,7 +193,7 @@ class ContactUsSection extends Component {
                 className="button-lrg"
                 onClick={() => this.sendEmailEnquriy()}
               >
-                Send Query
+                Submit
               </button>
             </form>
           </section>
@@ -231,25 +231,25 @@ class ContactUsSection extends Component {
     const nameMail = `${firstNameMail} ${lastNameMail}`.trim();
     let queryId = "";
     let errMsg = "";
-      if (firstNameMail !== "") {
-        errMsg += "First Name is required\n"
-      }
-      if (lastNameMail !== "") {
-        errMsg += "Last Name is required\n"
-      }
-      if (emailMail !== "") {
-        errMsg += "Email is required\n"
-      }
-      if (phoneMail !== "") {
-        errMsg += "Phone is required\n"
-      }
-      if (subjMail !== "") {
-        errMsg += "A subject is required\n"
-      }
-      if (bodyMail !== "") {
-        errMsg += "Please write a query\n"
-      }
-      if (errMsg !== "") {
+    if (firstNameMail !== "") {
+      errMsg += "First Name is required\n";
+    }
+    if (lastNameMail !== "") {
+      errMsg += "Last Name is required\n";
+    }
+    if (emailMail !== "") {
+      errMsg += "Email is required\n";
+    }
+    if (phoneMail !== "") {
+      errMsg += "Phone is required\n";
+    }
+    if (subjMail !== "") {
+      errMsg += "A subject is required\n";
+    }
+    if (bodyMail !== "") {
+      errMsg += "Please write a query\n";
+    }
+    if (errMsg !== "") {
       try {
         try {
           await addCustomerQuery(
