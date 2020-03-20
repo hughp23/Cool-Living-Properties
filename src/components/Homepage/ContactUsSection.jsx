@@ -22,13 +22,27 @@ class ContactUsSection extends Component {
     emailMail: "",
     phoneMail: "",
     subjMail: "",
-    bodyMail: ""
+    bodyMail: "",
+    placeHolders: {
+      firstName: "First Name",
+      lastName: "Last Name",
+      email: "Email",
+      phone: "Phone",
+      query: "What would you like to know...?",
+      options: {
+        option1: "Maintenance",
+        option2: "Key-holding",
+        option3: "Development"
+      },
+      submit: "Submit"
+    }
   };
   render() {
     const { contactUs } = this.props;
     const contactUsParsed = JSON.parse(contactUs);
     const title = contactUsParsed.title;
     const openingTimes = contactUsParsed.openingTimes;
+    const { placeHolders } = this.state;
     return (
       <div id="contact-us-section" className="contact-us-section half-screen">
         <section class="contact-us-flex flex-box">
@@ -123,7 +137,7 @@ class ContactUsSection extends Component {
               alt="Map of Mallorca"
             /> */}
             <form onSubmit={() => this.sendEmailEnquriy()}>
-              <div className="flex-box">
+              <div className="flex-box row">
                 <div className="width-full flex-box-column">
                   <input
                     id="firstNameMail"
@@ -131,7 +145,7 @@ class ContactUsSection extends Component {
                     type="text"
                     onChange={this.handleChange}
                     required
-                    placeholder="First Name"
+                    placeholder={placeHolders.firstName}
                   />
                 </div>
                 <div className="width-full flex-box-column">
@@ -141,11 +155,11 @@ class ContactUsSection extends Component {
                     type="text"
                     onChange={this.handleChange}
                     required
-                    placeholder="Last Name"
+                    placeholder={placeHolders.lastName}
                   />
                 </div>
               </div>
-              <div className="flex-box">
+              <div className="flex-box row">
                 <div className="width-full flex-box-column">
                   <input
                     id="emailMail"
@@ -153,7 +167,7 @@ class ContactUsSection extends Component {
                     type="email"
                     onChange={this.handleChange}
                     required
-                    placeholder="Email"
+                    placeholder={placeHolders.email}
                   />
                 </div>
                 <div className="width-full flex-box-column">
@@ -163,39 +177,60 @@ class ContactUsSection extends Component {
                     type="phone"
                     onChange={this.handleChange}
                     required
-                    placeholder="Phone"
+                    placeholder={placeHolders.phone}
                   />
                 </div>
               </div>
-              {/* <div className="width-full flex-box-column">
+              <div className="width-full flex-box-column">
                 <label>Subject</label>
-                <input
-                  id="subjMail"
-                  className="form-input"
-                  type="text"
-                  onChange={this.handleChange}
-                  required
-                />
-              </div> */}
-              <div className=" width-full flex-box-column">
+                <div>
+                  <input
+                    id="subjMail"
+                    className="form-input"
+                    type="checkbox"
+                    onChange={this.handleChange}
+                    required
+                  />
+                  <input
+                    id="subjMail"
+                    className="form-input"
+                    type="checkbox"
+                    onChange={this.handleChange}
+                    required
+                  />
+                  <input
+                    id="subjMail"
+                    className="form-input"
+                    type="checkbox"
+                    onChange={this.handleChange}
+                    required
+                  />
+                </div>
+              </div>
+              <div className="width-full flex-box-column row">
                 <textarea
                   id="bodyMail"
                   className="form-input query-textarea"
                   type="text"
                   onChange={this.handleChange}
                   required
-                  placeholder="What would you like to know...?"
+                  placeholder={placeHolders.query}
                 />
               </div>
               <div class="g-recaptcha" data-sitekey="your_site_key"></div>
-              <button
-                type="button"
-                className="button-lrg"
-                onClick={() => this.sendEmailEnquriy()}
-              >
-                Submit
-              </button>
+              <div className="width-full flex-box row">
+                <button
+                  type="button"
+                  className="button-lrg"
+                  onClick={() => this.sendEmailEnquriy()}
+                >
+                  {placeHolders.submit}
+                </button>
+              </div>
             </form>
+            <section>
+
+            </section>
           </section>
         </section>
       </div>
