@@ -35,8 +35,8 @@ class ServicesSection extends Component {
               <text>{developmentParsed.subTitle}</text>
               <list>
                 <ul>
-                  {developmentParsed.list.map(item => {
-                    return <li>{item}</li>;
+                  {developmentParsed.list.map((item, i) => {
+                    return <li key={i}>{item}</li>;
                   })}
                 </ul>
               </list>
@@ -78,8 +78,8 @@ class ServicesSection extends Component {
               <text>{maintenanceParsed.text1}</text>
               <list>
                 <ul>
-                  {maintenanceParsed.list.map(item => {
-                    return <li>{item}</li>;
+                  {maintenanceParsed.list.map((item, i) => {
+                    return <li key={i}>{item}</li>;
                   })}
                 </ul>
               </list>
@@ -130,8 +130,8 @@ class ServicesSection extends Component {
               <text>{keyHoldingParsed.subTitle}</text>
               <list>
                 <ul>
-                  {keyHoldingParsed.list.map(item => {
-                    return <li>{item}</li>;
+                  {keyHoldingParsed.list.map((item, i) => {
+                    return <li key={i}>{item}</li>;
                   })}
                 </ul>
               </list>

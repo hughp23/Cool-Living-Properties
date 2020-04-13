@@ -1,16 +1,14 @@
-import React from "react";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { fab } from "@fortawesome/free-brands-svg-icons";
-import { faCheckSquare, faCoffee } from "@fortawesome/free-solid-svg-icons";
+import React, { Component } from "react";
 import { Router } from "@reach/router";
 import Homepage from "./components/Homepage/Homepage";
 import Footer from "./components/Footer";
 import "./styling/_global.scss";
 import "./App.css";
+import { loadReCaptcha } from 'react-recaptcha-v3'
+import { reCaptchaConfig } from "./config.js";
 
-// library.add(fab, faCheckSquare, faCoffee);
-
-function App() {
+class App extends Component {
+  render() {
   return (
     <div className="App">
       <Router>
@@ -19,6 +17,11 @@ function App() {
       <Footer path="/footer" />
     </div>
   );
+  }
+  componentDidMount() {
+    // loadReCaptcha(reCaptchaConfig.siteKey);
+  }
 }
+
 
 export default App;

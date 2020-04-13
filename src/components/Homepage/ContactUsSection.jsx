@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { sendEmail } from "../../functions.js";
 import { addCustomerQuery } from "../../utils.js";
+import $ from "jquery";
+import { ReCaptcha } from 'react-recaptcha-google'
+import { reCaptchaConfig } from "../../config.js"
 //import GoogleMapReact from "google-map-react";
 import "../../styling/Homepage/_contact-us-section.scss";
 //import Marker from "./Marker";
@@ -11,6 +14,8 @@ const instaLogo = require("../../assets/social-media-logos/instagram.png");
 const linkedinLogo = require("../../assets/social-media-logos/linkedin.png");
 //const openDoor = require("../../assets/open-door.png");
 const openSign = require("../../assets/open-sign.png");
+const tickGif = require("../../assets/tick-gif-2-no-loop.gif");
+const loadingHouse = require("../../assets/loading-house-2.gif");
 // const mallorcaMap = require("../../assets/mallorca-map.png");
 
 class ContactUsSection extends Component {
@@ -23,26 +28,14 @@ class ContactUsSection extends Component {
     phoneMail: "",
     subjMail: "",
     bodyMail: "",
-    placeHolders: {
-      firstName: "First Name",
-      lastName: "Last Name",
-      email: "Email",
-      phone: "Phone",
-      query: "What would you like to know...?",
-      options: {
-        option1: "Maintenance",
-        option2: "Key-holding",
-        option3: "Development"
-      },
-      submit: "Submit"
-    }
+    emailSent: false
   };
   render() {
-    const { contactUs } = this.props;
+    const { contactUs, developmentTitle, maintenanceTitle, keyHoldingTitle } = this.props;
     const contactUsParsed = JSON.parse(contactUs);
     const title = contactUsParsed.title;
     const openingTimes = contactUsParsed.openingTimes;
-    const { placeHolders } = this.state;
+    const placeHolders = contactUsParsed.placeHolders;
     return (
       <div id="contact-us-section" className="contact-us-section half-screen">
         <section class="contact-us-flex flex-box">
@@ -101,42 +94,8 @@ class ContactUsSection extends Component {
           </section>
         </section>
         <section className="map-size width-full flex-box-column-around">
-          {/* <GoogleMapReact
-            bootstrapURLKeys={{
-              key: "AIzaSyDGCuXe-BpifRSBcMOsWAn-aALXQWFfPXs"
-            }}
-            defaultCenter={[34.0522, -118.2437]}
-            // defaultZoom={this.props.zoom}
-            yesIWantToUseGoogleMapApiInternals={true}
-            // onGoogleApiLoaded={({ map, maps, places }) =>
-            //   this.handleApiLoaded(map, maps, places)
-            // }
-          ></GoogleMapReact> */}
-          {/* <GoogleMapReact
-            bootstrapURLKeys={{
-              key: "AIzaSyDGCuXe-BpifRSBcMOsWAn-aALXQWFfPXs"
-            }}
-            defaultCenter={this.state.center}
-            defaultZoom={this.state.zoom}
-            yesIWantToUseGoogleMapApiInternals
-            onGoogleApiLoaded={({ map, maps }) =>
-              this.handleApiLoaded(map, maps)
-            }
-          >
-            <Marker
-              lat={39.84}
-              lng={2.53}
-              text="My Marker"
-              className="map-marker-container"
-            />
-          </GoogleMapReact> */}
           <section className="img-container flex-box-column-around">
-            {/* <img
-              title="See shaded area for where we work"
-              src={mallorcaMap}
-              alt="Map of Mallorca"
-            /> */}
-            <form onSubmit={() => this.sendEmailEnquriy()}>
+            <form id='contact-form' class='contact-form' onSubmit={() => this.sendEmailEnquriy()}>
               <div className="flex-box row">
                 <div className="width-full flex-box-column">
                   <input
@@ -181,30 +140,17 @@ class ContactUsSection extends Component {
                   />
                 </div>
               </div>
-              <div className="width-full flex-box-column">
-                <label>Subject</label>
-                <div>
-                  <input
-                    id="subjMail"
-                    className="form-input"
-                    type="checkbox"
-                    onChange={this.handleChange}
-                    required
-                  />
-                  <input
-                    id="subjMail"
-                    className="form-input"
-                    type="checkbox"
-                    onChange={this.handleChange}
-                    required
-                  />
-                  <input
-                    id="subjMail"
-                    className="form-input"
-                    type="checkbox"
-                    onChange={this.handleChange}
-                    required
-                  />
+              <div className="width-full flex-box multi-checkbox-3 row">
+                <div className="width75 flex-box">
+                  <div onClick={() => this.changeOfQuerySubj("Development")} className="option maintenance curved-left border-right-none" value="1">
+                    <label>{developmentTitle}</label>
+                  </div>
+                  <div onClick={() => this.changeOfQuerySubj("Maintenance")} className="option developemt border-right-none">
+                    <label>{maintenanceTitle}</label>
+                  </div>
+                  <div onClick={() => this.changeOfQuerySubj("Key-holding")} className="option key-holding curved-right">
+                    <label>{keyHoldingTitle}</label>
+                  </div>
                 </div>
               </div>
               <div className="width-full flex-box-column row">
@@ -217,9 +163,18 @@ class ContactUsSection extends Component {
                   placeholder={placeHolders.query}
                 />
               </div>
-              <div class="g-recaptcha" data-sitekey="your_site_key"></div>
+              {/* <ReCaptcha
+                ref={(el) => {this.captchaDemo = el;}}
+                size="normal"
+                data-theme="dark"            
+                render="explicit"
+                sitekey={reCaptchaConfig.siteKey}
+                onloadCallback={this.onLoadRecaptcha}
+                verifyCallback={this.verifyCallback}
+              /> */}
               <div className="width-full flex-box row">
                 <button
+                  id='form-submit'
                   type="button"
                   className="button-lrg"
                   onClick={() => this.sendEmailEnquriy()}
@@ -228,8 +183,23 @@ class ContactUsSection extends Component {
                 </button>
               </div>
             </form>
-            <section>
-
+            <section id='loading-icon-container' class='loading-icon-container flex-box-column-center hidden'>
+              <div>
+              <img id='loading-icon' src={loadingHouse} alt='Loading...' />
+            </div>
+            </section>
+            <section id='form-completed-container' class='form-completed-container' hidden='hidden'>
+              <img src={tickGif} alt='form is completed' />
+              <section>
+                <text>
+                  {placeHolders.success1}
+                </text>
+                <br />
+                <br />
+                <text>
+                  {placeHolders.success2}
+                </text>
+              </section>
             </section>
           </section>
         </section>
@@ -237,46 +207,72 @@ class ContactUsSection extends Component {
     );
   }
 
-  componentDidMount() {}
-  handleApiLoaded(map, maps, places) {
-    console.log("handling api");
-    // // Get bounds by our places
-    // const bounds = this.getMapBounds(map, maps, places);
-    // // Fit map to bounds
-    // map.fitBounds(bounds);
-    // // Bind the resize listener
-    // this.bindResizeListener(map, maps, bounds);
+  componentDidMount() {
+  //   if (this.captchaDemo) {
+  //     console.log("started, just a second...")
+  //     this.captchaDemo.reset();
+  // }
   }
+  // handleApiLoaded(map, maps, places) {
+  //   console.log("handling api");
+  //   // // Get bounds by our places
+  //   // const bounds = this.getMapBounds(map, maps, places);
+  //   // // Fit map to bounds
+  //   // map.fitBounds(bounds);
+  //   // // Bind the resize listener
+  //   // this.bindResizeListener(map, maps, bounds);
+  // }
 
   handleChange = event => {
     const { id, value } = event.target;
     this.setState({ [id]: value });
   };
 
+  changeOfQuerySubj = (emailSubj) => {
+    this.setState({ subjMail: emailSubj });
+
+    $(".option").each(function() {
+      const _this = $(this)
+      _this.removeClass("checked-subj");
+      if (_this[0].innerText === emailSubj) {
+        _this.addClass("checked-subj");
+      }
+    })
+  }
+
+//   onLoadRecaptcha = () => {
+//     if (this.captchaDemo) {
+//         this.captchaDemo.reset();
+//     }
+// }
+
+  verifyCallback = (recaptchaToken) => {
+    // Here you will get the final recaptchaToken!!!  
+    console.log(recaptchaToken, "<= your recaptcha token")
+  }
+
   sendEmailEnquriy = async () => {
+    $("#contact-form").attr("hidden", "hidden");
+    $("#loading-icon-container").removeClass("hidden")
     const {
       firstNameMail,
       lastNameMail,
       emailMail,
       phoneMail,
       subjMail,
-      bodyMail
+      bodyMail,
+      emailSent
     } = this.state;
 
     const nameMail = `${firstNameMail} ${lastNameMail}`.trim();
     let queryId = "";
     let errMsg = "";
+    if (emailSent === false) { 
     if (firstNameMail !== "") {
       errMsg += "First Name is required\n";
     }
-    if (lastNameMail !== "") {
-      errMsg += "Last Name is required\n";
-    }
     if (emailMail !== "") {
       errMsg += "Email is required\n";
-    }
-    if (phoneMail !== "") {
-      errMsg += "Phone is required\n";
     }
     if (subjMail !== "") {
       errMsg += "A subject is required\n";
@@ -287,6 +283,7 @@ class ContactUsSection extends Component {
     if (errMsg !== "") {
       try {
         try {
+          console.log(subjMail, "subjMail");
           await addCustomerQuery(
             firstNameMail,
             lastNameMail,
@@ -295,7 +292,6 @@ class ContactUsSection extends Component {
             subjMail,
             bodyMail
           ).then(result => {
-            console.log(result, "result");
             queryId = result;
           });
         } finally {
@@ -307,15 +303,22 @@ class ContactUsSection extends Component {
             subjMail,
             bodyMail
           ).then(result => {
-            console.log(result, "result");
+            this.setState({ emailSent: true });
+            $("#contact-form").attr("hidden", "hidden");
+            $("#loading-icon-container").addClass("hidden")
+            $("#form-completed-container").removeAttr("hidden");
           });
         }
       } catch (err) {
-        console.log(err, "err");
+        alert('There was an error while submitting this query.');
       }
     } else {
       alert(errMsg);
     }
+  }
+  else {
+    alert('Query has already been submitted.');
+  }
   };
 }
 

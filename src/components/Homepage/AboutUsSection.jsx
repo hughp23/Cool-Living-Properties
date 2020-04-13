@@ -22,9 +22,9 @@ class AboutUsSection extends Component {
             <h4>{aboutUsParsed.ourCoreValuesTitle}</h4>
             {/* Row styling of Core Values */}
             <section class="core-values-list">
-              {aboutUsParsed.ourCoreValuesList.map(item => {
+              {aboutUsParsed.ourCoreValuesList.map((item, i) => {
                 return (
-                  <section className="checkmark-and-text flex-box-between">
+                  <section key={i} className="checkmark-and-text flex-box-between">
                     <div className="img-container flex-box-column-around">
                       <img class="checkmark" src={checkmark} alt="checkmark" />
                     </div>
