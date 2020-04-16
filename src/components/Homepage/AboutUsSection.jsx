@@ -13,13 +13,15 @@ class AboutUsSection extends Component {
       <div id="about-us-section" className="about-us-section width-full">
         <section className="text flex-box-column-around">
           <section className="flex-box-column-around">
-            <h3>{title}</h3>
+            <h1>{title}</h1>
           </section>
           <section className="text-container flex-box-column-around">
             <p>{text}</p>
           </section>
           <section class="core-values-container flex-box-column-around">
-            <h4>{aboutUsParsed.ourCoreValuesTitle}</h4>
+            <div className="bottom-padding2vh">
+              <h3>{aboutUsParsed.ourCoreValuesTitle}</h3>
+            </div>
             {/* Row styling of Core Values */}
             <section class="core-values-list">
               {aboutUsParsed.ourCoreValuesList.map((item, i) => {
@@ -29,7 +31,7 @@ class AboutUsSection extends Component {
                       <img class="checkmark" src={checkmark} alt="checkmark" />
                     </div>
                     <div className="text-container flex-box-column-around">
-                      <h3>{item}</h3>
+                      <h4>{item}</h4>
                     </div>
                   </section>
                 );
@@ -43,7 +45,7 @@ class AboutUsSection extends Component {
                     <img class="checkmark" src={checkmark} alt="checkmark" />
                   </div>
                   <div className="text-container flex-box-column-around">
-                    <h3>{aboutUsParsed.ourCoreValuesList[0]}</h3>
+                    <h4>{aboutUsParsed.ourCoreValuesList[0]}</h4>
                   </div>
                 </section>
                 <section className="checkmark-and-text flex-box-between">
@@ -51,7 +53,7 @@ class AboutUsSection extends Component {
                     <img class="checkmark" src={checkmark} alt="checkmark" />
                   </div>
                   <div className="text-container flex-box-column-around">
-                    <h3>{aboutUsParsed.ourCoreValuesList[1]}</h3>
+                    <h4>{aboutUsParsed.ourCoreValuesList[1]}</h4>
                   </div>
                 </section>
               </section>
@@ -61,7 +63,7 @@ class AboutUsSection extends Component {
                     <img class="checkmark" src={checkmark} alt="checkmark" />
                   </div>
                   <div className="text-container flex-box-column-around">
-                    <h3>{aboutUsParsed.ourCoreValuesList[2]}</h3>
+                    <h4>{aboutUsParsed.ourCoreValuesList[2]}</h4>
                   </div>
                 </section>
                 <section className="checkmark-and-text flex-box-between">
@@ -69,7 +71,7 @@ class AboutUsSection extends Component {
                     <img class="checkmark" src={checkmark} alt="checkmark" />
                   </div>
                   <div className="text-container flex-box-column-around">
-                    <h3>{aboutUsParsed.ourCoreValuesList[3]}</h3>
+                    <h4>{aboutUsParsed.ourCoreValuesList[3]}</h4>
                   </div>
                 </section>
               </section>

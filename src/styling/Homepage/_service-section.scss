@@ -13,9 +13,8 @@
       background-position: center center;
       opacity: 0.85;
       height: 10vh;
-      h2 {
+      h1 {
         text-align: center;
-        font-size: 3.5em;
       }
     }
   }
@@ -54,9 +53,8 @@
         padding-bottom: 2vh;
         // padding: 5vh 5vw 5vh 5vw;
 
-        h3 {
+        h2 {
           font-family: $title-text-font;
-          font-size: 2.5em;
           text-align: center;
         }
 
@@ -106,9 +104,8 @@
         padding-bottom: 2vh;
         // padding: 5vh 5vw 5vh 5vw;
 
-        h3 {
+        h2 {
           font-family: $title-text-font;
-          font-size: 2.5em;
           text-align: center;
         }
 
@@ -158,9 +155,8 @@
         padding-bottom: 2vh;
         // padding: 5vh 5vw 5vh 5vw;
 
-        h3 {
+        h2 {
           font-family: $title-text-font;
-          font-size: 2.5em;
           text-align: center;
         }
 
@@ -207,18 +203,6 @@
 
       .key-holding {
         width: auto;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 420px) {
-  .service-section-container {
-    .main-header {
-      .text-container {
-        h2 {
-          font-size: 3em;
-        }
       }
     }
   }

@@ -40,7 +40,7 @@ class ContactUsSection extends Component {
       <div id="contact-us-section" className="contact-us-section half-screen">
         <section class="contact-us-flex flex-box">
           <section className="contact-us-container width-full">
-            <h3>{title}</h3>
+            <h1>{title}</h1>
             <section className="contact-container flex-box-column">
               <a>
                 <contact className="flex-box-between">
@@ -96,7 +96,7 @@ class ContactUsSection extends Component {
         <section className="map-size width-full flex-box-column-around">
           <section className="img-container flex-box-column-around">
             <form id='contact-form' class='contact-form' onSubmit={() => this.sendEmailEnquriy()}>
-              <div className="flex-box row">
+              <div className="input-row row">
                 <div className="width-full flex-box-column">
                   <input
                     id="firstNameMail"
@@ -118,7 +118,7 @@ class ContactUsSection extends Component {
                   />
                 </div>
               </div>
-              <div className="flex-box row">
+              <div className="input-row row">
                 <div className="width-full flex-box-column">
                   <input
                     id="emailMail"
@@ -140,28 +140,30 @@ class ContactUsSection extends Component {
                   />
                 </div>
               </div>
-              <div className="width-full flex-box multi-checkbox-3 row">
-                <div className="width75 flex-box">
-                  <div onClick={() => this.changeOfQuerySubj("Development")} className="option maintenance curved-left border-right-none" value="1">
+              <div className="width-full flex-box multi-checkbox-3">
+                <div className="inner-container flex-box row">
+                  <div onClick={() => this.changeOfQuerySubj("Development")} className="option developemt curved-left border-right-none" name="Development" value="1">
                     <label>{developmentTitle}</label>
                   </div>
-                  <div onClick={() => this.changeOfQuerySubj("Maintenance")} className="option developemt border-right-none">
+                  <div onClick={() => this.changeOfQuerySubj("Maintenance")} className="option maintenance border-right-none" name="Maintenance">
                     <label>{maintenanceTitle}</label>
                   </div>
-                  <div onClick={() => this.changeOfQuerySubj("Key-holding")} className="option key-holding curved-right">
+                  <div onClick={() => this.changeOfQuerySubj("Key-holding")} className="option key-holding curved-right" name="Key-holding">
                     <label>{keyHoldingTitle}</label>
                   </div>
                 </div>
               </div>
-              <div className="width-full flex-box-column row">
-                <textarea
-                  id="bodyMail"
-                  className="form-input query-textarea"
-                  type="text"
-                  onChange={this.handleChange}
-                  required
-                  placeholder={placeHolders.query}
-                />
+              <div className="flex-box-column row">
+                <section className="flex-box width-full">
+                  <textarea
+                    id="bodyMail"
+                    className="form-input query-textarea width-full"
+                    type="text"
+                    onChange={this.handleChange}
+                    required
+                    placeholder={placeHolders.query}
+                  />
+                </section>
               </div>
               {/* <ReCaptcha
                 ref={(el) => {this.captchaDemo = el;}}
@@ -172,7 +174,7 @@ class ContactUsSection extends Component {
                 onloadCallback={this.onLoadRecaptcha}
                 verifyCallback={this.verifyCallback}
               /> */}
-              <div className="width-full flex-box row">
+              <div className="flex-box row">
                 <button
                   id='form-submit'
                   type="button"
@@ -234,10 +236,10 @@ class ContactUsSection extends Component {
     $(".option").each(function() {
       const _this = $(this)
       _this.removeClass("checked-subj");
-      if (_this[0].innerText === emailSubj) {
-        _this.addClass("checked-subj");
-      }
-    })
+    });
+
+    $(`[name=${emailSubj}]`).addClass("checked-subj");
+    
   }
 
 //   onLoadRecaptcha = () => {

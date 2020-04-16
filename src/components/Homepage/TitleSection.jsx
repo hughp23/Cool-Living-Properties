@@ -33,7 +33,7 @@ class TitleSection extends Component {
           <section class="mission-statement-container">
             <section className="flex-box">
               <list>
-                <h2>{section1Parsed.title}</h2>
+                <h1>{section1Parsed.title}</h1>
                 <section className="flex-box">
                   <ul>
                     {section1Parsed.list.map((item, i) => {
