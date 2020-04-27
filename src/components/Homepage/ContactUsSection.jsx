@@ -285,7 +285,6 @@ class ContactUsSection extends Component {
     if (errMsg !== "") {
       try {
         try {
-          console.log(subjMail, "subjMail");
           await addCustomerQuery(
             firstNameMail,
             lastNameMail,

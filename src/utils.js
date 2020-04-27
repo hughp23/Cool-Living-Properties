@@ -118,7 +118,6 @@ const getHomePageContent = async (language, section, subSection) => {
       const data = snapshot.docs.map(doc => {
         return doc.data();
       });
-      console.log(data, "contact us section")
       translation.contactUs = data;
     })
     .catch(err => {
