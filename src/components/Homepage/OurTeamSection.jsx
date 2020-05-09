@@ -17,7 +17,7 @@ class OurTeamSection extends Component {
         </section>
         <section className="text flex-box-column">
           <div className="header-container flex-box-column-around">
-            <h3>{ourTeamParsed.title}</h3>
+            <h1>{ourTeamParsed.title}</h1>
           </div>
           <section className="text-container">
             <p>{ourTeamParsed.text[0]}</p>

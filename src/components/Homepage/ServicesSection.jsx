@@ -20,14 +20,14 @@ class ServicesSection extends Component {
       <div id="service-section-container" className="service-section-container">
         <section className="main-header flex-box-column-around">
           <section className="text-container flex-box-column-around">
-            <h2>{titleParsed}</h2>
+            <h1>{titleParsed}</h1>
           </section>
         </section>
         <section id="services-grid" className="services-grid">
           <section className="development">
             <background>
               <header>
-                <h3>{developmentParsed.title}</h3>
+                <h2>{developmentParsed.title}</h2>
               </header>
               <imagecontainer>
                 <img src={developmentImage} alt="development" />
@@ -35,8 +35,8 @@ class ServicesSection extends Component {
               <text>{developmentParsed.subTitle}</text>
               <list>
                 <ul>
-                  {developmentParsed.list.map(item => {
-                    return <li>{item}</li>;
+                  {developmentParsed.list.map((item, i) => {
+                    return <li key={i}>{item}</li>;
                   })}
                 </ul>
               </list>
@@ -53,7 +53,7 @@ class ServicesSection extends Component {
                 <imagecontainer>
                   <img src={developmentImage} alt="development" />
                 </imagecontainer>
-                <h3>{developmentParsed.title}</h3>
+                <h2>{developmentParsed.title}</h2>
               </background>
               <background
                 key="back"
@@ -70,7 +70,7 @@ class ServicesSection extends Component {
           <section className="maintenance">
             <background>
               <header>
-                <h3>{maintenanceParsed.title}</h3>
+                <h2>{maintenanceParsed.title}</h2>
               </header>
               <imagecontainer>
                 <img src={maintenanceImage} alt="development" />
@@ -78,8 +78,8 @@ class ServicesSection extends Component {
               <text>{maintenanceParsed.text1}</text>
               <list>
                 <ul>
-                  {maintenanceParsed.list.map(item => {
-                    return <li>{item}</li>;
+                  {maintenanceParsed.list.map((item, i) => {
+                    return <li key={i}>{item}</li>;
                   })}
                 </ul>
               </list>
@@ -97,7 +97,7 @@ class ServicesSection extends Component {
                 <imagecontainer>
                   <img src={maintenanceImage} alt="maintenance" />
                 </imagecontainer>
-                <h3>{maintenanceParsed.title}</h3>
+                <h2>{maintenanceParsed.title}</h2>
               </background>
               <background
                 key="back"
@@ -122,7 +122,7 @@ class ServicesSection extends Component {
           <section className="key-holding">
             <background>
               <header>
-                <h3>{keyHoldingParsed.title}</h3>
+                <h2>{keyHoldingParsed.title}</h2>
               </header>
               <imagecontainer>
                 <img src={keyHoldingImage} alt="development" />
@@ -130,8 +130,8 @@ class ServicesSection extends Component {
               <text>{keyHoldingParsed.subTitle}</text>
               <list>
                 <ul>
-                  {keyHoldingParsed.list.map(item => {
-                    return <li>{item}</li>;
+                  {keyHoldingParsed.list.map((item, i) => {
+                    return <li key={i}>{item}</li>;
                   })}
                 </ul>
               </list>
@@ -148,7 +148,7 @@ class ServicesSection extends Component {
                 <imagecontainer>
                   <img src={keyHoldingImage} alt="key-holding" />
                 </imagecontainer>
-                <h3>{keyHoldingParsed.title}</h3>
+                <h2>{keyHoldingParsed.title}</h2>
               </background>
               <background
                 key="back"
