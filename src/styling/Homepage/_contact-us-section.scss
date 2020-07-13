@@ -8,14 +8,15 @@
   justify-content: space-between;
   // width: 50vw;
   min-height: 50vh;
+  padding-top: 2.5vh;
+  padding-bottom: 2.5vh;
 
   .contact-us-flex {
-    width: 55%;
+    width: 50%;
     .contact-us-container {
       max-width: 30vw;
-      h3 {
+      h1 {
         padding-top: 3.5vh;
-        font-size: 1.95em;
         padding-left: 2.5vw;
       }
       .contact-container {
@@ -51,19 +52,83 @@
   }
 
   .map-size {
+    width: 50%;
     .img-container {
-      img {
-        height: 100%;
-        width: 75%;
-        display: block;
-        margin: auto;
-        border-radius: 1.2em;
+      max-width: 45vw;
+      // img {
+      //   height: 100%;
+      //   width: 75%;
+      //   display: block;
+      //   margin: auto;
+      //   border-radius: 1.2em;
+      // }
+
+      .form-completed-container {
+        img {
+          height: 20vh;
+        }
+
+        text {
+          font-size: 2.5vh;
+        }
       }
     }
 
-    // GoogleMapReact {
-    //   max-height: 50vh;
-    // }
+    .row {
+      padding-bottom: 1.25vh;
+      margin: 0 1.5vw;
+    }
+
+    .input-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+    .loading-icon-container {
+      height: 50vh;
+      img {
+        height: 15vh;
+      }
+    }
+
+    .contact-form {
+      .multi-checkbox-3 {
+        .inner-container {
+          width: 75%;
+          .option {
+            border: 1px $dark-grey solid;
+            width: 100%;
+            padding: .5vh .5vw;
+            cursor: pointer;
+            background-color: #ffffff;
+            color: #6b6565;
+
+            label {
+              cursor: pointer;
+              font-size: 1.25vh;
+            }
+          }
+
+          .border-right-none {
+            border-right: none;
+          }
+
+          .checked-subj {
+            background-color: #e1f5fe;
+            color: #1d1d1d;
+          }
+
+          .curved-left {
+            border-radius: 1em 0 0 1em;
+          }
+
+          .curved-right {
+            border-radius: 0 1em 1em 0;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -93,17 +158,31 @@
       }
     }
 
-    .map-size {
-      .img-container {
-        img {
-          height: 100%;
-          width: 80%;
-          display: block;
-          margin: auto;
-          border-radius: 1.2em;
-          margin-top: 2.5vh;
-          margin-bottom: 2.5vh;
+    .contact-form {
+      .multi-checkbox-3 {
+        .inner-container {
+          width: 100% !important;
         }
+      }
+    }
+
+    .map-size {
+      width: 100%;
+      .img-container {
+        max-width: 100vw;
+        // img {
+        //   height: 100%;
+        //   width: 80%;
+        //   display: block;
+        //   margin: auto;
+        //   border-radius: 1.2em;
+        //   margin-top: 2.5vh;
+        //   margin-bottom: 2.5vh;
+        // }
+      }
+
+      .input-row {
+        flex-direction: column;
       }
     }
   }

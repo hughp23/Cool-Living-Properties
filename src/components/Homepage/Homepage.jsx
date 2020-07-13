@@ -98,7 +98,17 @@ class Homepage extends Component {
     },
     contactUs: {
       title: "Contact Us",
-      openingTimes: "Mon-Fri 09:00-17:00"
+      openingTimes: "Mon-Fri 09:00-17:00",
+      placeHolders: {
+        firstName: "First Name",
+        lastName: "Last Name",
+        email: "Email",
+        phone: "Phone",
+        query: "Please write your message here...",
+        submit: "Submit",
+        success1: "Thanks for your query!",
+        success2: "We will be in touch shortly."
+      }
     }
   };
   render() {
@@ -265,7 +275,7 @@ class Homepage extends Component {
           <PhotosOfWorkSection />
         </section>
         <section id="contactUs" className="contact-us">
-          <ContactUsSection contactUs={JSON.stringify(contactUs)} />
+          <ContactUsSection contactUs={JSON.stringify(contactUs)} developmentTitle={ourServices.development.title} maintenanceTitle={ourServices.maintenance.title} keyHoldingTitle={ourServices.keyHolding.title} />
         </section>
       </div>
     );
@@ -277,6 +287,7 @@ class Homepage extends Component {
   };
 
   componentDidMount() {
+  // loadReCaptcha(reCaptchaConfig.siteKey);
     let { language } = this.state;
 
     language =
@@ -383,8 +394,18 @@ class Homepage extends Component {
             ]
           },
           contactUs: {
-            title: data.contactUs[0].Title,
-            openingTimes: data.contactUs[0].OpeningTimes
+            title: data.contactUs[1].Title,
+            openingTimes: data.contactUs[1].OpeningTimes,
+            placeHolders: {
+              firstName: data.contactUs[0].FirstName,
+              lastName: data.contactUs[0].LastName,
+              email: data.contactUs[0].Email,
+              phone: data.contactUs[0].Phone,
+              query: data.contactUs[0].Query,
+              submit: data.contactUs[0].Submit,
+              success1: data.contactUs[0].Success1,
+              success2: data.contactUs[0].Success2
+            }
           }
         });
       });

@@ -1,5 +1,17 @@
 {
   "projects": {
     "default": "cool-living-properties"
+  },
+  "targets": {
+    "cool-living-properties": {
+      "hosting": {
+        "dev": [
+          "coollivingproperties-dev"
+        ],
+        "live": [
+          "cool-living-properties"
+        ]
+      }
+    }
   }
 }

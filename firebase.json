@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "hosting": {
     "public": "./build",
     "ignore": [
@@ -13,4 +14,37 @@
       }
     ]
   }
+=======
+  "hosting": [ {
+      "target": "live",
+      "public": "./build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    },
+    {
+      "target": "dev",
+      "public": "./build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+>>>>>>> db07f1fb81e02b898fd018a20ec084cbbb9f9254
 }
